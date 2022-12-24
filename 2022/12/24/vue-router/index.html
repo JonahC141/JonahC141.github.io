@@ -17,7 +17,7 @@
   
 
   
-    <meta name="author" content="John Doe">
+    <meta name="author" content="JonahC">
   
 
   
@@ -102,7 +102,7 @@
         <div class="layout-margin">
           <h1 class="title-wrap">vueRouter</h1>
           <h2 class="title-sub-wrap">
-            <strong>John Doe</strong>
+            <strong>JonahC</strong>
             <span>发布于</span>
             <time  class="article-date" datetime="2022-12-24T09:10:03.957Z" itemprop="datePublished">2022-12-24</time>
           </h2>
@@ -154,7 +154,7 @@
 
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div id=&quot;app&quot;&gt;</span><br><span class="line">    &lt;button&gt;&lt;router-link :to=&quot;&#123;name:&#x27;page&#x27;&#125;&quot;&gt;点击跳转&lt;/router-link&gt;&lt;/button&gt;</span><br><span class="line">    &lt;button&gt;&lt;router-link :to=&quot;&#123;name:&#x27;home&#x27;&#125;&quot;&gt;点击返回&lt;/router-link&gt;&lt;/button&gt;</span><br><span class="line">    &lt;hr&gt;</span><br><span class="line">    &lt;router-view&gt;Home页面&lt;/router-view&gt;</span><br><span class="line">    </span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<h3 id="路由参数"><a href="#路由参数" class="headerlink" title="路由参数*"></a>路由参数*</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> <span class="title class_">VueRouter</span>(&#123;</span><br><span class="line">    <span class="attr">routes</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">path</span>: <span class="string">&#x27;/&#x27;</span>,</span><br><span class="line">            <span class="attr">name</span>: <span class="string">&#x27;home&#x27;</span>,</span><br><span class="line">            <span class="attr">component</span>: <span class="title class_">Home</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">path</span>: <span class="string">&#x27;/page/:wd&#x27;</span>,</span><br><span class="line">            <span class="attr">name</span>: <span class="string">&#x27;page&#x27;</span>,</span><br><span class="line">            <span class="attr">component</span>: <span class="title class_">Page</span></span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="路由参数"><a href="#路由参数" class="headerlink" title="路由参数"></a>路由参数</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> <span class="title class_">VueRouter</span>(&#123;</span><br><span class="line">    <span class="attr">routes</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">path</span>: <span class="string">&#x27;/&#x27;</span>,</span><br><span class="line">            <span class="attr">name</span>: <span class="string">&#x27;home&#x27;</span>,</span><br><span class="line">            <span class="attr">component</span>: <span class="title class_">Home</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">path</span>: <span class="string">&#x27;/page/:wd&#x27;</span>,</span><br><span class="line">            <span class="attr">name</span>: <span class="string">&#x27;page&#x27;</span>,</span><br><span class="line">            <span class="attr">component</span>: <span class="title class_">Page</span></span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div id=&quot;app&quot;&gt;</span><br><span class="line">    &lt;button&gt;&lt;router-link :to=&quot;&#123;name:&#x27;page&#x27;,params : &#123;wd :1&#125;&#125;&quot;&gt;点击跳转page1&lt;/router-link&gt;&lt;/button&gt;</span><br><span class="line">    &lt;button&gt;&lt;router-link :to=&quot;&#123;name:&#x27;page&#x27;,params : &#123;wd :2&#125;&#125;&quot;&gt;点击跳转page2&lt;/router-link&gt;&lt;/button&gt;</span><br><span class="line">    &lt;button&gt;&lt;router-link :to=&quot;&#123;name:&#x27;home&#x27;&#125;&quot;&gt;点击返回&lt;/router-link&gt;&lt;/button&gt;</span><br><span class="line">    &lt;hr&gt;</span><br><span class="line">    &lt;router-view&gt;Home页面&lt;/router-view&gt;</span><br><span class="line">    </span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
 
@@ -377,7 +377,7 @@
       
     </div>
      
-    <p>&copy; 2022 <a href="/" target="_blank">John Doe</a></p>
+    <p>&copy; 2022 <a href="/" target="_blank">JonahC</a></p>
 
     
 
