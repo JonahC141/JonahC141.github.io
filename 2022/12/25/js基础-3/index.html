@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#3367D6"/>
+  <link rel="apple-touch-icon" href="/icons-192.png">
+  <link rel="manifest" href="/manifest.json">
+  
+
+
+  <meta name="generator" content="Hexo 6.3.0">
+
+  
+
+  
+
+  
+    <meta name="author" content="JonahC">
+  
+
+  
+
+  
+
+  <title>JavaScript常用方法 | JonahC</title>
+
+  
+
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@1.1.3/index.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs@9.16.2/styles/monokai.css">
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+</head>
+<body>
+  <div class="root-container">
+    
+<!-- header container -->
+<header class="header-container post">
+  
+    <div class="post-image" style="background-image: url(https://pic.3gbizhi.com/2020/1026/20201026030658240.jpg)"></div>
+  
+
+  <!-- navbar -->
+<nav class="navbar">
+  <div class="navbar-content">
+    <!-- logo -->
+    <div class="navbar-logo">
+      <a href="/">
+        
+          JonahC
+        
+      </a>
+    </div>
+    <!-- link -->
+    <div class="navbar-link">
+      <div class="navbar-btn">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <ul class="navbar-list">
+        
+          <li class="navbar-list-item"><a href="/">首页</a></li>
+        
+          <li class="navbar-list-item"><a target="_blank" rel="noopener" href="https://damengcoder.gitee.io/blog/">友链</a></li>
+        
+          <li class="navbar-list-item"><a href="/about">关于</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+    <div class="header-content">
+      <div class="post-text layout-block">
+        <div class="layout-margin">
+          <h1 class="title-wrap">JavaScript常用方法</h1>
+          <h2 class="title-sub-wrap">
+            <strong>JonahC</strong>
+            <span>发布于</span>
+            <time  class="article-date" datetime="2022-12-25T03:04:58.478Z" itemprop="datePublished">2022-12-25</time>
+          </h2>
+          <ul class="wrap-list dark">
+  
+    <li><a href="/categories/%E5%9F%BA%E7%A1%80/">📒 基础</a></li>
+  
+</ul>
+          <ul class="wrap-list dark">
+  
+    <li><a href="/tags/JavaScript/">🏷️ JavaScript</a></li>
+  
+</ul>
+        </div>
+      </div>
+    </div>
+  
+
+  
+  
+  
+</header>
+
+    <!-- 文章 -->
+
+<!-- 文章内容 -->
+<div class="body-container">
+  <article class="content-container layout-block post-container">
+    <div class="article-info">
+      
+      
+      
+      
+      <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
+        <h2 id="Number类型方法"><a href="#Number类型方法" class="headerlink" title="Number类型方法"></a>Number类型方法</h2><h5 id="Number-parseFloat"><a href="#Number-parseFloat" class="headerlink" title="Number.parseFloat()"></a><strong>Number.parseFloat()</strong></h5><p>此方法用于获取一个数字的整数和浮点数部分，也可以将一个非数字类型转化为数字类型</p>
+<h5 id="Number-parseInt"><a href="#Number-parseInt" class="headerlink" title="Number.parseInt()"></a><strong>Number.parseInt()</strong></h5><p>此方法跟parseFloat很相似，区别在于，parseInt取数字的整数部分</p>
+<h5 id="Number-toString"><a href="#Number-toString" class="headerlink" title="Number.toString()"></a><strong>Number.toString()</strong></h5><p>此方法用于将数字转化为字符串</p>
+<h2 id="以下string方法不改变原字符串"><a href="#以下string方法不改变原字符串" class="headerlink" title="以下string方法不改变原字符串"></a>以下string方法不改变原字符串</h2><h5 id="concat（）"><a href="#concat（）" class="headerlink" title="concat（）"></a><strong>concat（）</strong></h5><p>​		用于拼接字符串<br>​		A.concat(B)</p>
+<h5 id="a-length"><a href="#a-length" class="headerlink" title="a.length"></a><strong>a.length</strong></h5><p>用于获取字符串的长度</p>
+<h5 id="a-indexof"><a href="#a-indexof" class="headerlink" title="a.indexof()"></a><strong>a.indexof()</strong></h5><p>用于返回字符串中某一个字符的位置，从左往右查找，<br>从0开始，类似于数组</p>
+<h5 id="a-lastindexof"><a href="#a-lastindexof" class="headerlink" title="a.lastindexof()"></a><strong>a.lastindexof()</strong></h5><p>用于返回字符串中某一个字符的位置，从右往左查找</p>
+<h5 id="replace"><a href="#replace" class="headerlink" title="replace()"></a><strong>replace()</strong></h5><p>方法用于替换某一段字符，返回一个新的字符串<br>a.replace(‘abc’,’123’)</p>
+<hr>
+<h5 id="toUpperCase"><a href="#toUpperCase" class="headerlink" title="toUpperCase()"></a><strong>toUpperCase()</strong></h5><p>此方法用于将字符串中的小写字母转化为大写字母</p>
+<h5 id="toLowerCase"><a href="#toLowerCase" class="headerlink" title="toLowerCase()"></a><strong>toLowerCase()</strong></h5><p>此方法用于将字符串中的大写字母转化为小写字母</p>
+<hr>
+<h5 id="split"><a href="#split" class="headerlink" title="split()"></a><strong>split()</strong></h5><p>此方法用于将一个字符串以特定的格式切割成数组<br>可以在方法调用后使用  [i]访问数组中的某一段字符<br>        var str &#x3D; ‘a,b,c,d,efg’;<br>        str.split(‘,’)[2]</p>
+<h5 id="slice"><a href="#slice" class="headerlink" title="slice()"></a><strong>slice()</strong></h5><p>用于切割字符串中某一段，不改变原字符串，传入两个参数，<br>第一个是切割的起始位置，第二个是切割的结束为止，<u>左闭右开</u>区间<br>        var str &#x3D; ‘a,b,c,d,efg’;<br>        console.log(str.slice(2,5));<br>        字符串中的“，”也是元素之一，不可忽略</p>
+<hr>
+<h2 id="以下是array方法"><a href="#以下是array方法" class="headerlink" title="以下是array方法"></a>以下是array方法</h2><h5 id="Array-isArray"><a href="#Array-isArray" class="headerlink" title="Array.isArray()"></a><strong>Array.isArray()</strong></h5><p>用于判断是否为一个数组，返回布尔值</p>
+<h5 id="array-of"><a href="#array-of" class="headerlink" title="array.of()"></a><strong>array.of()</strong></h5><p>用于将传入参数组成数组</p>
+<h5 id="array-from"><a href="#array-from" class="headerlink" title="array.from()"></a><strong>array.from()</strong></h5><p>此方法将一个数组对象转化为一个数组，不改变原数组，</p>
+<pre><code>    var arr = [1,2,3,4,5,1,2];
+    var set = new Set(arr);  //Set(5) &#123; 1, 2, 3, 4, 5 &#125;
+    var arr2 = Array.from(set);
+    console.log(arr2); //[ 1, 2, 3, 4, 5 ]
+</code></pre>
+<h5 id="pop"><a href="#pop" class="headerlink" title="pop()"></a><strong>pop()</strong></h5><p>此方法删除数组最后一个元素，改变原数组，返回被删除的元素，</p>
+<h5 id="shift"><a href="#shift" class="headerlink" title="shift()"></a><strong>shift()</strong></h5><p>此方法删除数组第一个元素，改变原数组，返回被删除元素</p>
+<h5 id="push"><a href="#push" class="headerlink" title="push()"></a><strong>push()</strong></h5><p>此方法向数组末尾添加一个元素，改变原数组，返回添加后数组的 length</p>
+<h5 id="unshift"><a href="#unshift" class="headerlink" title="unshift()"></a><strong>unshift()</strong></h5><p>此方法向数组开头添加一个元素，改变原数组，返回添加后数组的 length</p>
+<h5 id="reverse"><a href="#reverse" class="headerlink" title="reverse()"></a><strong>reverse()</strong></h5><p>反转并且返回原数组</p>
+<h5 id="splice"><a href="#splice" class="headerlink" title="splice()"></a><strong>splice()</strong></h5><p>此方法接受3个参数，</p>
+<p>​		第一个参数（必填），选中数组中某一个位置，可以为复数（负数从最后一项开始算起）<br>​		第二个参数（选填），规定要 [删除] 的长度，可以为0<br>​		第三个参数（选填），规定插入的元素<br>​		第四(n)个参数（选填），规定插入的元素</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]; <span class="variable language_">console</span>.<span class="title function_">log</span>(    arr.<span class="title function_">splice</span>(<span class="number">0</span>,<span class="number">2</span>)<span class="comment">//[ 1, 2 ] ) console.log(arr);//[3]</span></span><br></pre></td></tr></table></figure>
+
+<p>上述代码中第一个参数选中数组第0项的位置，第二个参数设定截取长度为2，调用此方法返回被截取的数组，同时改变原数组。</p>
+<h5 id="sort"><a href="#sort" class="headerlink" title="sort()"></a><strong>sort()</strong></h5><p>将数组进行排序，<u>会改变原数组</u>，非必填的参数，是一个函数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">8</span>, <span class="number">9</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">6</span>, <span class="number">4</span>, <span class="number">0</span>]; </span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(</span><br><span class="line">    arr.<span class="title function_">sort</span>() <span class="comment">//[0,1,2,4,6,8,9] </span></span><br><span class="line">) </span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr.<span class="title function_">sort</span>(<span class="keyword">function</span> (<span class="params">a, b</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> b - a <span class="comment">// [9,8,6,4,2,1,0]    </span></span><br><span class="line">&#125;) )</span><br></pre></td></tr></table></figure>
+
+<p><strong>b-a</strong>负数升序，正数降序</p>
+<h5 id="copyWithin"><a href="#copyWithin" class="headerlink" title="copyWithin()"></a><strong>copyWithin()</strong></h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(    </span><br><span class="line">arr.<span class="title function_">copyWithin</span>(<span class="number">2</span>,<span class="number">0</span>,<span class="number">3</span>)</span><br><span class="line">    <span class="comment">//[ 1, 2, 1, 2, 3 ] ) </span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr)<span class="comment">//[ 1, 2, 1, 2, 3 ]</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>在此方法中接收了三个参数，先介绍一下三个参数的用途：</p>
+<blockquote>
+<p>第一个参数：代表要粘贴的起始位置 </p>
+</blockquote>
+<blockquote>
+<p>第二个参数：复制的起始位置 </p>
+</blockquote>
+<blockquote>
+<p>第三个参数：复制的截至位置(不包含截至位置的值)即  <u>左闭右开</u> 区间</p>
+</blockquote>
+<h5 id="fill"><a href="#fill" class="headerlink" title="fill()"></a><strong>fill()</strong></h5><p>覆盖数组</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//样例1 </span></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]; </span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(    </span><br><span class="line">arr.<span class="title function_">fill</span>(<span class="number">4</span>) <span class="comment">//[ 4, 4, 4 ] </span></span><br><span class="line">) </span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr) <span class="comment">//[ 4, 4, 4 ]  </span></span><br><span class="line"></span><br><span class="line"><span class="comment">//样例2 </span></span><br><span class="line"><span class="keyword">var</span> arr2 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(    </span><br><span class="line">arr2.<span class="title function_">fill</span>(<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>) <span class="comment">//[ 1, 0, 3, 4 ] </span></span><br><span class="line">) </span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr2) <span class="comment">//[ 1, 0, 3, 4 ]</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="slice-1"><a href="#slice-1" class="headerlink" title="slice()"></a><strong>slice()</strong></h5><p>复制数组中的某一部分元素，不改变原数组</p>
+<p>两个参数，开始和结束，左闭右开区间</p>
+<h5 id="join"><a href="#join" class="headerlink" title="join()"></a><strong>join()</strong></h5><p>根据所传递的参数连接数组中的每一个元素，返回连接好的字符串</p>
+<blockquote>
+<p>不传参数，默认用逗号连接，传递参数为任意值，则以任意值连接不改变原数组</p>
+</blockquote>
+<h5 id="concat"><a href="#concat" class="headerlink" title="concat()"></a><strong>concat()</strong></h5><p>将数组与某一个值连接，也可以连接一个或多个数组，不改变原数组</p>
+<h5 id="toString-NaN"><a href="#toString-NaN" class="headerlink" title="toString()"></a><strong>toString()</strong></h5><p>将一位数组或者多维数组转化为字符串，不改变原数组</p>
+<h5 id="indexOf"><a href="#indexOf" class="headerlink" title="indexOf()"></a><strong>indexOf()</strong></h5><p>此方法用来查找数组中某一项的下标值，从左往右查找，不改变原数组</p>
+<h5 id="lastIndexOf"><a href="#lastIndexOf" class="headerlink" title="lastIndexOf()"></a><strong>lastIndexOf()</strong></h5><p>此方法也是用来查找数组中某一项的下标值，从右往左查找，不改变原数组</p>
+<h5 id="includes"><a href="#includes" class="headerlink" title="includes()"></a><strong>includes()</strong></h5><p>此方法用来查找数组中某一项是否存在，返回true或者false</p>
+<p>遍历数组，不改变原数组</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];  </span><br><span class="line">arr.<span class="title function_">forEach</span>(<span class="function">(<span class="params">item,index</span>)=&gt;</span>&#123; </span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(item) </span><br><span class="line">&#125;) </span><br><span class="line"><span class="comment">//1</span></span><br><span class="line"><span class="comment">//2 </span></span><br><span class="line"><span class="comment">//3 </span></span><br><span class="line"><span class="comment">//4</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="forEach"><a href="#forEach" class="headerlink" title="forEach()"></a><strong>forEach</strong>()</h5><p>此方法用来遍历数组，不能改变原数组</p>
+<p>第一个参数(必选)：便利的每一项的值 </p>
+<p>第二个参数(可选)：遍历的每一项的下标值 </p>
+<p>第三个参数(可选)：被遍历的数组 </p>
+<p>第四个参数(可选)：执行回调函数时的this</p>
+<h5 id="some"><a href="#some" class="headerlink" title="some()"></a><strong>some()</strong></h5><p>遍历数组，看是否有符合条件的值</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];  </span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(    </span><br><span class="line">	arr.<span class="title function_">some</span>(<span class="function">(<span class="params">item,index</span>)=&gt;</span>&#123;     </span><br><span class="line">	<span class="keyword">return</span> item &gt; <span class="number">3</span>   </span><br><span class="line">&#125;) </span><br><span class="line">) </span><br><span class="line"><span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="every"><a href="#every" class="headerlink" title="every()"></a><strong>every()</strong></h5><p>此方法用来检测数组中的元素是否全部满足条件</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];  </span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(   </span><br><span class="line">	arr.<span class="title function_">every</span>(<span class="function">(<span class="params">item</span>)=&gt;</span>&#123;     </span><br><span class="line">	<span class="keyword">return</span> item &gt; <span class="number">2</span>   </span><br><span class="line">	&#125;) </span><br><span class="line">) </span><br><span class="line"><span class="comment">//false</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="filter"><a href="#filter" class="headerlink" title="filter()"></a><strong>filter()</strong></h5><p>此方法用来筛选数组中的元素，符合筛选条件的元素会被返回，</p>
+<p>组成新的数组，不改变原数组</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]; </span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(    </span><br><span class="line">	arr.<span class="title function_">filter</span>(<span class="function">(<span class="params">item</span>)=&gt;</span>&#123;        </span><br><span class="line">	<span class="keyword">return</span> item&gt;<span class="number">2</span>  </span><br><span class="line">	<span class="comment">//[ 3, 4 ]   </span></span><br><span class="line">	&#125;)</span><br><span class="line">) </span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr) </span><br><span class="line"><span class="comment">//[ 1, 2, 3, 4 ]</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="map"><a href="#map" class="headerlink" title="map()"></a><strong>map()</strong></h5><p>此方法用于处理数组中的每一个元素，并且返回新数组</p>
+<h5 id="reduce"><a href="#reduce" class="headerlink" title="reduce()"></a><strong>reduce()</strong></h5><p>数组累加器</p>
+<blockquote>
+<p> 第一个参数：per，如果规定了第五个参数，则per为第五个参数的值，如果没有规定第五个参数，则为数组中第一项</p>
+<p>第二个参数：item，如果per为数组第一项，则item为数组第二项，如果per为规定的第五个参数值，则item为数组第一项</p>
+<p>第三个参数：item的索引值</p>
+<p>第四个参数：原数组</p>
+<p>第五个参数：初始值</p>
+</blockquote>
+<h5 id="flat"><a href="#flat" class="headerlink" title="flat()"></a><strong>flat()</strong></h5><p>此方法会深度遍历并且展开数组，接收可选参数，可选参数的值为区间1到无穷。常用于展开多维数组</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, [<span class="number">2</span>, <span class="number">3</span>], [[<span class="number">4</span>, <span class="number">5</span>], <span class="number">6</span>], [<span class="number">7</span>, <span class="number">8</span>]] </span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(    </span><br><span class="line">    arr.<span class="title function_">flat</span>() <span class="comment">//[ 1, 2, 3, [ 4, 5 ], 6, 7, 8 ] </span></span><br><span class="line">) </span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(    </span><br><span class="line">   	arr.<span class="title function_">flat</span>(<span class="title class_">Infinity</span>) <span class="comment">//[1, 2, 3, 4, 5, 6, 7, 8] </span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Math"><a href="#Math" class="headerlink" title="Math"></a><strong>Math</strong></h2><h5 id="Math-random"><a href="#Math-random" class="headerlink" title="Math.random()"></a><strong>Math.random()</strong></h5><p>用于产生0-1之间的随机数，可以自定义随机数区间</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num = <span class="title class_">Math</span>.<span class="title function_">random</span>(); <span class="comment">//0-1随机数 </span></span><br><span class="line"><span class="keyword">var</span> num1 = <span class="title class_">Math</span>.<span class="title function_">random</span>()*<span class="number">10</span>; <span class="comment">//0-10随机数 </span></span><br><span class="line"><span class="keyword">var</span> num2 = <span class="title class_">Math</span>.<span class="title function_">random</span>()*<span class="number">10</span> + <span class="number">10</span>;  <span class="comment">//10-20随机数</span></span><br></pre></td></tr></table></figure>
+
+<p>获取0-100的随机数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num = <span class="title class_">Number</span>.<span class="built_in">parseInt</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>()*<span class="number">100</span>)</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(num);</span><br></pre></td></tr></table></figure>
+
+<h5 id="Math-max"><a href="#Math-max" class="headerlink" title="Math.max()"></a><strong>Math.max()</strong></h5><p>Math.max可以接受一组数字，返回这组数中最大的数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(    </span><br><span class="line">	<span class="title class_">Math</span>.<span class="title function_">max</span>(<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>) </span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h5 id="Math-min"><a href="#Math-min" class="headerlink" title="Math.min()"></a><strong>Math.min()</strong></h5><p>Math.min可以接受一组数字，返回这组数中的最小的数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(</span><br><span class="line">	<span class="title class_">Math</span>.<span class="title function_">min</span>(<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>) </span><br><span class="line">	)</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="圆周率使用Math-PI"><a href="#圆周率使用Math-PI" class="headerlink" title="圆周率使用	Math.PI"></a>圆周率使用	<strong>Math.PI</strong></h5>
+      </section>
+
+      
+      
+        <nav class="article-nav">
+          
+          
+            <div class="article-nav-item layout-padding">
+  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
+    
+    <div class="card-text">
+      
+        <a href="/2022/12/24/Vue-%E5%AD%A6%E4%B9%A0/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">Vue入门</h2>
+        </a>
+      
+      <div class="card-text--row">Older</div>
+    </div>
+  </article>
+</div>
+          
+        </nav>
+      
+
+      <section class="page-message-container layout-padding">
+        
+
+
+  
+  
+
+  
+  
+
+
+      </section>
+    </div>
+    <div class="widget-info">
+      <section class="widget-author widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-body">
+    
+      <img src="http://lc-TBZ2C7B3.cn-n1.lcfile.com/3Hcp0z6AaJPfRHMSFgFHsWnsV6QMjVTv/portrait.png" class="soft-size--round soft-style--box" alt="JonahC">
+    
+    
+      <h2>JonahC</h2>
+    
+    
+      <p>不想写描述</p>
+    
+
+    <div class="count-box">
+      <div class="count-box--item">
+        <svg class="icon icon-article" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M240.51564747 647.74217627h196.07203239c16.59071043 0 30.16492806-13.57421762 30.16492805-30.16492806V165.10332731c0-33.18142087-30.16492806-60.32985613-60.32985612-60.32985611H245.04038668C225.43318342 104.7734712 210.35071939 119.85593522 210.35071939 139.46313845V617.57724821c0 16.59071043 13.57421762 30.16492806 30.16492808 30.16492806z m663.62841731-452.47392089v482.63884894c0 33.18142087-27.14843525 60.32985613-60.32985612 60.32985613H180.18579134c-33.18142087 0-60.32985613-27.14843525-60.32985612-60.32985613V195.26825538c-49.77213131 0-90.49478418 40.72265287-90.49478417 90.49478417v452.4739209c0 49.77213131 40.72265287 90.49478418 90.49478417 90.49478417h286.56681657c16.59071043 0 30.16492806 13.57421762 30.16492807 30.16492807s13.57421762 30.16492806 30.16492805 30.16492806h90.49478418c16.59071043 0 30.16492806-13.57421762 30.16492805-30.16492806s13.57421762-30.16492806 30.16492807-30.16492807h286.56681657c49.77213131 0 90.49478418-40.72265287 90.49478417-90.49478417V285.76303955c0-49.77213131-40.72265287-90.49478418-90.49478417-90.49478417zM587.41232014 647.74217627h191.54729318c19.60720323 0 34.68966726-15.08246403 34.68966729-34.68966727V134.93839925c0-16.59071043-13.57421762-30.16492806-30.16492808-30.16492805H617.57724821c-30.16492806 0-60.32985613 27.14843525-60.32985612 60.32985611v452.4739209c0 16.59071043 13.57421762 30.16492806 30.16492805 30.16492806z" fill="currentColor"></path>
+</svg>
+        <span>4</span>
+      </div>
+      <div class="count-box--item">
+        <svg class="icon icon-categories" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M900.3614811 257.09082106h-339.81629553l-67.96326003-101.9448889c-19.41807444-29.12711113-48.54518557-43.69066667-82.52681443-43.69066667H123.6385189c-53.39970333 0-97.09036999 43.69066667-97.09037113 97.09036999v582.54222222c0 53.39970333 43.69066667 97.09036999 97.09037113 97.09037002h776.7229622c53.39970333 0 97.09036999-43.69066667 97.09037113-97.09037002V354.18119104c0-53.39970333-43.69066667-97.09036999-97.09037113-97.09036998z m-97.09036999 242.72592554H220.72888889c-24.27259221 0-48.54518557-24.27259221-48.54518556-48.54518556s24.27259221-48.54518557 48.54518556-48.54518444h582.54222222c24.27259221 0 48.54518557 24.27259221 48.54518556 48.54518444s-24.27259221 48.54518557-48.54518556 48.54518556z" fill="currentColor"></path>
+</svg>
+        2
+      </div>
+      <div class="count-box--item">
+        <svg class="icon icon-tags" viewBox="0 0 1098 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M283.42180005 272q0-28.38857157-20.09142843-48.48000001t-48.47999998-20.09142842-48.48000002 20.09142842-20.09142846 48.48000001 20.09142846 48.48 48.48000002 20.09142843 48.47999998-20.09142843 20.09142843-48.48zM855.0332285 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.03999997 263.58857157q-20.9142853 19.81714313-48.75428534 19.81714312-28.38857157 0-48.20571468-19.81714312l-383.04-383.58857157q-20.36571468-19.81714313-34.55999999-54.10285688t-14.19428534-62.6742853l0-222.85714313q0-27.84000002 20.36571469-48.20571469t48.2057147-20.36571466l222.85714313 0q28.38857157 0 62.6742853 14.19428529t54.65142842 34.55999999l383.04000001 382.49142843q19.81714313 20.9142853 19.81714314 48.75428532zM1060.74751475 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.04 263.58857157q-20.9142853 19.81714313-48.75428531 19.81714312-19.26857155 0-31.61142843-7.47428531t-28.38857159-24.13714314l251.79428534-251.7942853q19.81714313-19.81714313 19.81714308-48.20571469 0-27.84000002-19.81714308-48.75428531l-383.04000001-382.49142845q-20.36571468-20.36571468-54.65142842-34.55999999t-62.67428532-14.19428534l120 0q28.38857157 0 62.67428532 14.19428534t54.65142842 34.55999999l383.03999998 382.49142845q19.81714313 20.9142853 19.81714314 48.75428531z" fill="currentColor"></path>
+</svg>
+        2
+      </div>
+    </div>
+  </div>
+</section>
+
+      
+
+      
+<section class="widet-notice widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <svg class="icon icon-notice" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M512 945.02305225v28.15620663a24.27259221 24.27259221 0 0 1-24.27259221 24.27259335H394.0352a48.54518557 48.54518557 0 0 1-41.74885888-23.78714112l-110.68302222-184.47170332a132.04290333 132.04290333 0 0 1-17.47626667-48.54518557h118.4502511a200.97706667 200.97706667 0 0 1 76.21594113 14.56355556l20.38897777 133.49925888a48.54518557 48.54518557 0 0 0 36.40888888 27.67075555l16.01991111 2.91271112a24.27259221 24.27259221 0 0 1 20.38897778 25.72894889zM997.45185223 463.45481443a194.18074112 194.18074112 0 0 1-38.8361489 116.50844445 24.75804445 24.75804445 0 0 1-36.4088889 0l-34.95253333-34.95253333a24.27259221 24.27259221 0 0 1-2.91271111-30.58346667 97.09036999 97.09036999 0 0 0 0-106.79940665 24.27259221 24.27259221 0 0 1 2.91271111-30.58346666l34.95253333-34.95253334a24.75804445 24.75804445 0 0 1 18.93262223-7.28177777 26.2144 26.2144 0 0 1 17.47626667 9.70903665A194.18074112 194.18074112 0 0 1 997.45185223 463.45481443z m-194.18074112-388.36148111v776.72296335a48.54518557 48.54518557 0 0 1-48.54518556 48.54518443h-28.64165888a48.54518557 48.54518557 0 0 1-33.98163001-14.07810332l-145.63555556-143.20829668A291.27111111 291.27111111 0 0 0 342.57730333 657.63555556H172.18370333a145.63555556 145.63555556 0 0 1-145.63555556-145.63555556v-97.09036999a145.63555556 145.63555556 0 0 1 145.63555556-145.63555556h170.3936a291.27111111 291.27111111 0 0 0 206.31703779-85.43952668l145.63555555-143.20829554a48.54518557 48.54518557 0 0 1 33.98162888-14.07810446H754.72592555a48.54518557 48.54518557 0 0 1 48.54518556 48.54518555z" fill="currentColor"></path>
+</svg>
+    <span>NOTICE</span>
+  </div>
+  <div class="widget-body">
+    <p>尝试日更，坚持周更，实在不行就不更了！</p>
+  </div>
+</section>
+
+
+      <section class="widget-categorys widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <svg class="icon icon-categories" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M900.3614811 257.09082106h-339.81629553l-67.96326003-101.9448889c-19.41807444-29.12711113-48.54518557-43.69066667-82.52681443-43.69066667H123.6385189c-53.39970333 0-97.09036999 43.69066667-97.09037113 97.09036999v582.54222222c0 53.39970333 43.69066667 97.09036999 97.09037113 97.09037002h776.7229622c53.39970333 0 97.09036999-43.69066667 97.09037113-97.09037002V354.18119104c0-53.39970333-43.69066667-97.09036999-97.09037113-97.09036998z m-97.09036999 242.72592554H220.72888889c-24.27259221 0-48.54518557-24.27259221-48.54518556-48.54518556s24.27259221-48.54518557 48.54518556-48.54518444h582.54222222c24.27259221 0 48.54518557 24.27259221 48.54518556 48.54518444s-24.27259221 48.54518557-48.54518556 48.54518556z" fill="currentColor"></path>
+</svg>
+    <span>CATEGORYS</span>
+  </div>
+  <div class="widget-body">
+    <ul class="categorys-list">
+      
+        <li class="categorys-list-item">
+          <a href="/categories/vue/">
+            vue (3)
+          </a>
+        </li>
+      
+        <li class="categorys-list-item">
+          <a href="/categories/%E5%9F%BA%E7%A1%80/">
+            基础 (1)
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+</section>
+
+      <section class="widget-tags widget-item  layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <svg class="icon icon-tags" viewBox="0 0 1098 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M283.42180005 272q0-28.38857157-20.09142843-48.48000001t-48.47999998-20.09142842-48.48000002 20.09142842-20.09142846 48.48000001 20.09142846 48.48 48.48000002 20.09142843 48.47999998-20.09142843 20.09142843-48.48zM855.0332285 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.03999997 263.58857157q-20.9142853 19.81714313-48.75428534 19.81714312-28.38857157 0-48.20571468-19.81714312l-383.04-383.58857157q-20.36571468-19.81714313-34.55999999-54.10285688t-14.19428534-62.6742853l0-222.85714313q0-27.84000002 20.36571469-48.20571469t48.2057147-20.36571466l222.85714313 0q28.38857157 0 62.6742853 14.19428529t54.65142842 34.55999999l383.04000001 382.49142843q19.81714313 20.9142853 19.81714314 48.75428532zM1060.74751475 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.04 263.58857157q-20.9142853 19.81714313-48.75428531 19.81714312-19.26857155 0-31.61142843-7.47428531t-28.38857159-24.13714314l251.79428534-251.7942853q19.81714313-19.81714313 19.81714308-48.20571469 0-27.84000002-19.81714308-48.75428531l-383.04000001-382.49142845q-20.36571468-20.36571468-54.65142842-34.55999999t-62.67428532-14.19428534l120 0q28.38857157 0 62.67428532 14.19428534t54.65142842 34.55999999l383.03999998 382.49142845q19.81714313 20.9142853 19.81714314 48.75428531z" fill="currentColor"></path>
+</svg>
+    <span>TAGS</span>
+  </div>
+  <div class="widget-body">
+    <div class="tags-cloud">
+      <a href="/tags/JavaScript/" style="font-size: 10px;" class="tags-cloud-0">JavaScript</a> <a href="/tags/vue/" style="font-size: 20px;" class="tags-cloud-10">vue</a>
+    </div>
+  </div>
+</section>
+    </div>
+  </article>
+</div>
+
+    <!-- footer container -->
+<footer id="footer" class="footer">
+  <div class="footer-container">
+    
+    <div class="social-icons">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+     
+    <p>&copy; 2022 <a href="/" target="_blank">JonahC</a></p>
+
+    
+
+    <p>Powered by <a href="https://hexo.io" target="_blank" rel="noopener noreferrer">Hexo</a> Theme - <a href="https://github.com/miiiku/flex-block" target="_blank" rel="noopener noreferrer author">flex-block</a></p>
+
+    <p>
+      <a href="javascript:;" id="theme-light">🌞 浅色</a>
+      <a href="javascript:;" id="theme-dark">🌛 深色</a>
+      <a href="javascript:;" id="theme-auto">🤖️ 自动</a>
+    </p>
+  </div>
+</footer>
+  </div>
+
+  <div class="back-to-top-fixed soft-size--round soft-style--box">
+    <svg class="icon icon-back-to-top" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+      <path d="M725.333333 426.666667c-12.8 0-21.333333-4.266667-29.866667-12.8l-213.333333-213.333333c-17.066667-17.066667-17.066667-42.666667 0-59.733333s42.666667-17.066667 59.733333 0l213.333333 213.333333c17.066667 17.066667 17.066667 42.666667 0 59.733333C746.666667 422.4 738.133333 426.666667 725.333333 426.666667z"></path>
+      <path d="M298.666667 426.666667c-12.8 0-21.333333-4.266667-29.866667-12.8-17.066667-17.066667-17.066667-42.666667 0-59.733333l213.333333-213.333333c17.066667-17.066667 42.666667-17.066667 59.733333 0s17.066667 42.666667 0 59.733333l-213.333333 213.333333C320 422.4 311.466667 426.666667 298.666667 426.666667z"></path>
+      <path d="M512 896c-25.6 0-42.666667-17.066667-42.666667-42.666667L469.333333 170.666667c0-25.6 17.066667-42.666667 42.666667-42.666667s42.666667 17.066667 42.666667 42.666667l0 682.666667C554.666667 878.933333 537.6 896 512 896z"></path>
+    </svg>
+  </div>
+
+  
+  <!-- aplayer -->
+
+
+<!-- dplayer -->
+
+
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+  
+  <!-- 尾部用户自定义相关内容 -->
+</body>
+</html>
