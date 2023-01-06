@@ -24,7 +24,7 @@
 
   
 
-  <title>http状态码 | JonahC</title>
+  <title>path系统路径模块 | JonahC</title>
 
   
 
@@ -100,11 +100,11 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">http状态码</h1>
+          <h1 class="title-wrap">path系统路径模块</h1>
           <h2 class="title-sub-wrap">
             <strong>JonahC</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2022-12-26T02:56:23.354Z" itemprop="datePublished">2022-12-26</time>
+            <time  class="article-date" datetime="2023-01-06T03:41:35.214Z" itemprop="datePublished">2023-01-06</time>
           </h2>
           <ul class="wrap-list dark">
   
@@ -113,7 +113,7 @@
 </ul>
           <ul class="wrap-list dark">
   
-    <li><a href="/tags/http/">🏷️ http</a></li>
+    <li><a href="/tags/path/">🏷️ path</a></li>
   
 </ul>
         </div>
@@ -137,12 +137,27 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h1 id="http状态码"><a href="#http状态码" class="headerlink" title="http状态码"></a>http状态码</h1><p>在http请求和响应中，状态码标志着响应的类型。</p>
-<p>将状态码写在writeHead的第一个参数位置。常用状态码如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1** : 100（continue）-客户端应继续发送请求</span><br><span class="line">2** : 200-成功，201-请求成功并且服务器创建了新资源，202-服务器接受请求但尚未处理</span><br><span class="line">3** : 301-重定向，302-临时重定向，304-协商缓存</span><br><span class="line">4** : 401-请求未授权，403-禁止访问，404-资源未找到</span><br><span class="line">5** : 500-服务器错误，502-无效响应</span><br></pre></td></tr></table></figure>
+        <h1 id="path系统路径模块"><a href="#path系统路径模块" class="headerlink" title="path系统路径模块"></a>path系统路径模块</h1><p>最常用的相对路径为.&#x2F;即可。</p>
+<h2 id="resolve"><a href="#resolve" class="headerlink" title="resolve()"></a>resolve()</h2><p>resolve方法用于获取一个路径的绝对路径</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(</span><br><span class="line">    path.<span class="title function_">resolve</span>(<span class="string">&#x27;./&#x27;</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 
+<p>resolve方法可以拼接绝对路径，</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(</span><br><span class="line">	path.<span class="title function_">resolve</span>(<span class="string">&#x27;./&#x27;</span>,<span class="string">&#x27;test&#x27;</span>,<span class="string">&#x27;1.js&#x27;</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 
+<h2 id="join"><a href="#join" class="headerlink" title="join()"></a>join()</h2><p>Join方法用于连接路径，返回连接的结果</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(</span><br><span class="line">	path.<span class="title function_">join</span>(<span class="string">&#x27;demo&#x27;</span>,<span class="string">&#x27;text&#x27;</span>,<span class="string">&#x27;1.js&#x27;</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 
+<h2 id="parse"><a href="#parse" class="headerlink" title="parse()"></a>parse()</h2><p>parse方法用于解析一个文件路径或者一个文件名称</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(</span><br><span class="line">    path.<span class="title function_">parse</span>(<span class="string">&#x27;./test/index.html&#x27;</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<p>返回一个对象，</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">root</span>: <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">  <span class="attr">dir</span>: <span class="string">&#x27;./test&#x27;</span>,</span><br><span class="line">  <span class="attr">base</span>: <span class="string">&#x27;index.html&#x27;</span>,</span><br><span class="line">  <span class="attr">ext</span>: <span class="string">&#x27;.html&#x27;</span>,</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;index&#x27;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>root</strong>——根盘符</p>
+<p><strong>dir</strong>——当前文件夹</p>
+<p><strong>base</strong>——当前文件</p>
+<p><strong>ext</strong>——当前文件的后缀名</p>
+<p><strong>name</strong>——当前文件的名字</p>
 
       </section>
 
@@ -150,28 +165,14 @@
       
         <nav class="article-nav">
           
-            <div class="article-nav-item layout-padding">
-  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
-    
-    <div class="card-text">
-      
-        <a href="/2023/01/06/path%E6%A8%A1%E5%9D%97/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">path系统路径模块</h2>
-        </a>
-      
-      <div class="card-text--row">Newer</div>
-    </div>
-  </article>
-</div>
-          
           
             <div class="article-nav-item layout-padding">
   <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
     
     <div class="card-text">
       
-        <a href="/2022/12/25/fs%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E6%A8%A1%E5%9D%97/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">fs文件系统模块</h2>
+        <a href="/2022/12/26/http%E7%8A%B6%E6%80%81%E7%A0%81/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">http状态码</h2>
         </a>
       
       <div class="card-text--row">Older</div>
