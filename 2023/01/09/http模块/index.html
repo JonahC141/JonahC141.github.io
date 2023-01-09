@@ -24,7 +24,7 @@
 
   
 
-  <title>path系统路径模块 | JonahC</title>
+  <title>http模块 | JonahC</title>
 
   
 
@@ -100,11 +100,11 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">path系统路径模块</h1>
+          <h1 class="title-wrap">http模块</h1>
           <h2 class="title-sub-wrap">
             <strong>JonahC</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2023-01-06T03:41:35.214Z" itemprop="datePublished">2023-01-06</time>
+            <time  class="article-date" datetime="2023-01-09T10:05:20.914Z" itemprop="datePublished">2023-01-09</time>
           </h2>
           <ul class="wrap-list dark">
   
@@ -113,7 +113,7 @@
 </ul>
           <ul class="wrap-list dark">
   
-    <li><a href="/tags/path/">🏷️ path</a></li>
+    <li><a href="/tags/http/">🏷️ http</a></li>
   
 </ul>
         </div>
@@ -137,33 +137,36 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h1 id="path系统路径模块"><a href="#path系统路径模块" class="headerlink" title="path系统路径模块"></a>path系统路径模块</h1><p>最常用的相对路径为.&#x2F;即可。</p>
-<h2 id="resolve"><a href="#resolve" class="headerlink" title="resolve()"></a>resolve()</h2><p>resolve方法用于获取一个路径的绝对路径</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(</span><br><span class="line">    path.<span class="title function_">resolve</span>(<span class="string">&#x27;./&#x27;</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+        <h1 id="http模块"><a href="#http模块" class="headerlink" title="http模块"></a>http模块</h1><h2 id="使用http模块帮助搭建服务器"><a href="#使用http模块帮助搭建服务器" class="headerlink" title="使用http模块帮助搭建服务器"></a>使用http模块帮助搭建服务器</h2><p>http模块提供了一个createServer()方法，用于创建服务器。此方法接受一个回调函数作为参数，req和res是request和response的缩写</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">&#x27;http&#x27;</span>);</span><br><span class="line"><span class="keyword">var</span> server = http.<span class="title function_">createServer</span>(<span class="function">(<span class="params">req,res</span>)=&gt;</span>&#123;</span><br><span class="line">    </span><br><span class="line">&#125;)</span><br><span class="line">server.<span class="title function_">listen</span>(<span class="number">3000</span>)</span><br></pre></td></tr></table></figure>
 
-<p>resolve方法可以拼接绝对路径，</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(</span><br><span class="line">	path.<span class="title function_">resolve</span>(<span class="string">&#x27;./&#x27;</span>,<span class="string">&#x27;test&#x27;</span>,<span class="string">&#x27;1.js&#x27;</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>此时server这个变量就是我们所创建的服务器，服务器监听3000端口。</p>
+<p>不写接口的话，默认为”&#x2F;“接口</p>
+<p>给服务器添加响应</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">&#x27;http&#x27;</span>);</span><br><span class="line"><span class="keyword">var</span> server = http.<span class="title function_">createServer</span>(<span class="function">(<span class="params">req,res</span>)=&gt;</span>&#123;</span><br><span class="line">    res.<span class="title function_">writeHead</span>(<span class="number">200</span> , &#123;<span class="string">&quot;Content-Type&quot;</span> : <span class="string">&quot;text/plain;charset=utf-8&#125;)</span></span><br><span class="line"><span class="string">    res.write(&quot;</span>这是服务器响应<span class="string">&quot;)</span></span><br><span class="line"><span class="string">    res.end()</span></span><br><span class="line"><span class="string">&#125;)</span></span><br><span class="line"><span class="string">server.listen(3000)</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="join"><a href="#join" class="headerlink" title="join()"></a>join()</h2><p>Join方法用于连接路径，返回连接的结果</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(</span><br><span class="line">	path.<span class="title function_">join</span>(<span class="string">&#x27;demo&#x27;</span>,<span class="string">&#x27;text&#x27;</span>,<span class="string">&#x27;1.js&#x27;</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>关于res</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">res.<span class="title function_">writeHead</span>() 响应头，包含状态码和响应的文档类型</span><br><span class="line">res.<span class="title function_">write</span>() 响应内容，即服务器发送给浏览器的真正内容</span><br><span class="line">res.<span class="title function_">end</span>()  代表发送响应结束。</span><br></pre></td></tr></table></figure>
 
-<h2 id="parse"><a href="#parse" class="headerlink" title="parse()"></a>parse()</h2><p>parse方法用于解析一个文件路径或者一个文件名称</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(</span><br><span class="line">    path.<span class="title function_">parse</span>(<span class="string">&#x27;./test/index.html&#x27;</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<h2 id="接口的处理"><a href="#接口的处理" class="headerlink" title="接口的处理"></a>接口的处理</h2><p>请求的信息全部包括在req参数中，用url解析req.url</p>
+<p>获取其中的pathname键，这个键就是接口，</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">&#x27;http&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> url = <span class="built_in">require</span>(<span class="string">&#x27;url&#x27;</span>)</span><br><span class="line"><span class="keyword">var</span> server = http.<span class="title function_">createServer</span>(<span class="function">(<span class="params">req,res</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> &#123;pathname&#125; = url.<span class="title function_">parse</span>(req.<span class="property">url</span>)</span><br><span class="line">    <span class="keyword">if</span>(pathname == <span class="string">&#x27;/s&#x27;</span>)&#123;</span><br><span class="line">        res.<span class="title function_">writeHead</span>(<span class="number">200</span> , &#123;<span class="string">&quot;Content-Type&quot;</span> : <span class="string">&quot;text/plain;charset=utf-8&quot;</span>&#125;)</span><br><span class="line">        res.<span class="title function_">write</span>(<span class="string">&quot;这是服务器对/s接口的响应&quot;</span>)</span><br><span class="line">        res.<span class="title function_">end</span>()</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(pathname == <span class="string">&#x27;/w&#x27;</span>)&#123;</span><br><span class="line">        res.<span class="title function_">writeHead</span>(<span class="number">200</span> , &#123;<span class="string">&quot;Content-Type&quot;</span> : <span class="string">&quot;text/plain;charset=utf-8&quot;</span>&#125;)</span><br><span class="line">        res.<span class="title function_">write</span>(<span class="string">&quot;这是服务器对/w接口的响应&quot;</span>)</span><br><span class="line">        res.<span class="title function_">end</span>()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line">server.<span class="title function_">listen</span>(<span class="number">3000</span>)</span><br></pre></td></tr></table></figure>
 
-<p>返回一个对象，</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">root</span>: <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">  <span class="attr">dir</span>: <span class="string">&#x27;./test&#x27;</span>,</span><br><span class="line">  <span class="attr">base</span>: <span class="string">&#x27;index.html&#x27;</span>,</span><br><span class="line">  <span class="attr">ext</span>: <span class="string">&#x27;.html&#x27;</span>,</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;index&#x27;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Content-Type的处理"><a href="#Content-Type的处理" class="headerlink" title="Content-Type的处理"></a>Content-Type的处理</h2><p>发送响应的时候，要在响应头writeHead中写一个Content-Type</p>
+<p>这是用来规定发送给浏览器的文档格式的。</p>
+<p>不同的文件格式，有不同的Content-Type，常用的文档格式有</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">text/html:    .html文件格式</span><br><span class="line">text/css:     .css文件格式</span><br><span class="line">text/plain:   纯文本格式</span><br><span class="line">image/jpeg:  .jpg文件格式</span><br><span class="line">image/png:    .png文件格式</span><br><span class="line">application/x-javascript:   .js文件格式</span><br></pre></td></tr></table></figure>
 
-<p><strong>root</strong>——根盘符</p>
-<p><strong>dir</strong>——当前文件夹</p>
-<p><strong>base</strong>——当前文件</p>
-<p><strong>ext</strong>——当前文件的后缀名</p>
-<p><strong>name</strong>——当前文件的名字</p>
+<p>设置charset&#x3D;utf-8是为了防止乱码的出现，规定字符集</p>
+<h2 id="query语句的处理"><a href="#query语句的处理" class="headerlink" title="query语句的处理"></a>query语句的处理</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">&#x27;http&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> url = <span class="built_in">require</span>(<span class="string">&#x27;url&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> queryString = <span class="built_in">require</span>(<span class="string">&#x27;querystring&#x27;</span>)</span><br><span class="line"><span class="keyword">var</span> server = http.<span class="title function_">createServer</span>(<span class="function">(<span class="params">req,res</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> &#123;pathname,query&#125; = url.<span class="title function_">parse</span>(req.<span class="property">url</span>)</span><br><span class="line">    <span class="keyword">if</span>(pathname == <span class="string">&#x27;/s&#x27;</span>)&#123;</span><br><span class="line">        <span class="keyword">var</span> &#123;wd&#125; = queryString.<span class="title function_">parse</span>(query);</span><br><span class="line">        res.<span class="title function_">writeHead</span>(<span class="number">200</span> , &#123;<span class="string">&quot;Content-Type&quot;</span> : <span class="string">&quot;text/plain;charset=utf-8&quot;</span>&#125;)</span><br><span class="line">        res.<span class="title function_">write</span>(<span class="string">`你搜索的是不是<span class="subst">$&#123;wd&#125;</span>`</span>)</span><br><span class="line">        res.<span class="title function_">end</span>()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line">server.<span class="title function_">listen</span>(<span class="number">3000</span>)</span><br></pre></td></tr></table></figure>
+
 
       </section>
 
       
       
         <nav class="article-nav">
+          
           
             <div class="article-nav-item layout-padding">
   <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
@@ -172,21 +175,6 @@
       
         <a href="/2023/01/06/url%E7%BD%91%E7%BB%9C%E8%B7%AF%E5%BE%84%E8%A7%A3%E6%9E%90%E6%A8%A1%E5%9D%97/" itemprop="url">
           <h2 class="card-text--title text-ellipsis">url网络路径解析模块</h2>
-        </a>
-      
-      <div class="card-text--row">Newer</div>
-    </div>
-  </article>
-</div>
-          
-          
-            <div class="article-nav-item layout-padding">
-  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
-    
-    <div class="card-text">
-      
-        <a href="/2022/12/26/http%E7%8A%B6%E6%80%81%E7%A0%81/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">http状态码</h2>
         </a>
       
       <div class="card-text--row">Older</div>
