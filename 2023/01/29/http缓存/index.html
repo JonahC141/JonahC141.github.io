@@ -24,7 +24,7 @@
 
   
 
-  <title>url网络路径解析模块 | JonahC</title>
+  <title>http缓存 | JonahC</title>
 
   
 
@@ -100,11 +100,11 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">url网络路径解析模块</h1>
+          <h1 class="title-wrap">http缓存</h1>
           <h2 class="title-sub-wrap">
             <strong>JonahC</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2023-01-06T03:54:57.582Z" itemprop="datePublished">2023-01-06</time>
+            <time  class="article-date" datetime="2023-01-29T04:00:37.845Z" itemprop="datePublished">2023-01-29</time>
           </h2>
           <ul class="wrap-list dark">
   
@@ -113,7 +113,7 @@
 </ul>
           <ul class="wrap-list dark">
   
-    <li><a href="/tags/url/">🏷️ url</a></li>
+    <li><a href="/tags/http/">🏷️ http</a></li>
   
 </ul>
         </div>
@@ -137,35 +137,78 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h1 id="url网络路径解析模块"><a href="#url网络路径解析模块" class="headerlink" title="url网络路径解析模块"></a>url网络路径解析模块</h1><p>一个url通常	包含以下部分</p>
+        <h1 id="http缓存"><a href="#http缓存" class="headerlink" title="http缓存"></a>http缓存</h1><p>缓存主要有两类</p>
 <ol>
-<li>协议类型：http 、 https</li>
-<li>域名： <a target="_blank" rel="noopener" href="http://www.baidu.com/">www.baidu.com</a></li>
-<li>接口： &#x2F;w</li>
-<li>query查询语句： wd&#x3D;123&amp;test&#x3D;abc</li>
+<li>浏览器缓存—[web存储]</li>
+<li>http缓存</li>
 </ol>
-<h2 id="parse"><a href="#parse" class="headerlink" title="parse()"></a>parse()</h2><p>parse</p>
-<p>方法用于解析网络路径</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> url = <span class="built_in">require</span>(<span class="string">&#x27;url&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(</span><br><span class="line">    url.<span class="title function_">parse</span>(<span class="string">&#x27;http://www.baidu.com:80/s?wd=123&amp;test=abc#360&#x27;</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-
-<p>返回结果为一个对象</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">protocol</span>: <span class="string">&#x27;http:&#x27;</span>,</span><br><span class="line">  <span class="attr">slashes</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">auth</span>: <span class="literal">null</span>,</span><br><span class="line">  <span class="attr">host</span>: <span class="string">&#x27;www.baidu.com:80&#x27;</span>,</span><br><span class="line">  <span class="attr">port</span>: <span class="string">&#x27;80&#x27;</span>,</span><br><span class="line">  <span class="attr">hostname</span>: <span class="string">&#x27;www.baidu.com&#x27;</span>,</span><br><span class="line">  <span class="attr">hash</span>: <span class="string">&#x27;#360&#x27;</span>,</span><br><span class="line">  <span class="attr">search</span>: <span class="string">&#x27;?wd=123&amp;test=abc&#x27;</span>,</span><br><span class="line">  <span class="attr">query</span>: <span class="string">&#x27;wd=123&amp;test=abc&#x27;</span>,</span><br><span class="line">  <span class="attr">pathname</span>: <span class="string">&#x27;/s&#x27;</span>,</span><br><span class="line">  <span class="attr">path</span>: <span class="string">&#x27;/s?wd=123&amp;test=abc&#x27;</span>,</span><br><span class="line">  <span class="attr">href</span>: <span class="string">&#x27;http://www.baidu.com:80/s?wd=123&amp;test=abc#360&#x27;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>其中protocol是协议类型，通常有http或者https。</p>
-<p>host是完整的域名。port是端口。</p>
-<p>hostname是域名的名称。</p>
-<p>hash是网络地址中带#号的部分，</p>
-<p>search是网络地址中？和它后边的查询语句。</p>
-<p>query是没有问好的查询语句。</p>
-<p>pathanme是接口。</p>
-<p>path是接口+search，</p>
-<p>href是完整的网络地址。</p>
+<p>http缓存通过响应头设置，这些响应头部会告诉浏览器资源的时效，在时效范围内，浏览器会保存并且继续使用缓存作为下一次访问的结果，时效范围外，浏览器才会去服务器拿取资源。</p>
+<h2 id="Cache-Control缓存策略"><a href="#Cache-Control缓存策略" class="headerlink" title="Cache-Control缓存策略"></a>Cache-Control缓存策略</h2><p>可以携带在request.header请求头和response.header响应头中，</p>
+<ol>
+<li>max-age                 缓存最大有效时间（private）</li>
+<li>s-maxage               缓存最大有效时间（public）</li>
+<li>private                    私有缓存设备（个人PC）</li>
+<li>public                     公共缓存设备（CDN代理服务器）</li>
+<li>no-cache                不管缓存有没有过期，使用资源前，一定要到服务器确认资源有效性</li>
+<li>must-revalidate    资源过期前，使用缓存资源，过期后，一定要到服务器确认资源有效性</li>
+<li>no-store                 完全不缓存</li>
+</ol>
+<h3 id="max-age-强制缓存"><a href="#max-age-强制缓存" class="headerlink" title="max-age 强制缓存"></a>max-age 强制缓存</h3><p>通过对一个资源设置max-age最大有效时间的缓存方式也称为强制缓存，私有设备上设置</p>
+<h3 id="s-maxage-公共缓存"><a href="#s-maxage-公共缓存" class="headerlink" title="s-maxage 公共缓存"></a>s-maxage 公共缓存</h3><p>s-maxage跟max-age相似，区别在于设置的位置不同，s-maxage是在公共设备上设置 [ <em>比如代理服务器</em> ] ，max-age是在私有设备上设置</p>
+<h3 id="no-cache"><a href="#no-cache" class="headerlink" title="no-cache"></a>no-cache</h3><p>当这个资源二次加载的时候，会首先服务器确认我的资源的有效性，确认有效才会从缓存中取。确认无效则服务器重新返回给前端一份资源。</p>
+<h3 id="must-revalidate"><a href="#must-revalidate" class="headerlink" title="must-revalidate"></a>must-revalidate</h3><p>当这个资源二次加载的时候，会先根据max-age判断资源是否过期，如果过期时间到了，则发送请求到服务器确认此资源的有效性，如果过期时间未到则直接从缓存中取。</p>
+<h3 id="no-store"><a href="#no-store" class="headerlink" title="no-store"></a>no-store</h3><p>不缓存</p>
+<h2 id="Expires强制缓存"><a href="#Expires强制缓存" class="headerlink" title="Expires强制缓存"></a>Expires强制缓存</h2><p>max-age是以时间段缓存，Expires是以时间戳缓存，如果同时存在max-age和Expires，浏览器优先执行max-age</p>
+<h2 id="缓存的缺点"><a href="#缓存的缺点" class="headerlink" title="缓存的缺点"></a>缓存的缺点</h2><p>强制缓存有两种</p>
+<ol>
+<li>max-age强制缓存</li>
+<li>Expires强制缓存</li>
+</ol>
+<p>虽然在有效期内不会重新发起请求，但如果在有效期内服务端资源发生了变化，则浏览器不能更新到最新的资源，有一定的滞后性</p>
+<hr>
+<h2 id="协商缓存"><a href="#协商缓存" class="headerlink" title="协商缓存"></a>协商缓存</h2><p>当一个资源缓存的时间超出了其设置的最大缓存时间max-age或者Expires，就会考虑协商缓存的情况。</p>
+<table>
+<thead>
+<tr>
+<th>了解之后做个对比：</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>强制缓存</strong>是设置一个时间，资源过期之后，让服务器发送最新的数据，未过期就继续使用缓存资源。</td>
+</tr>
+<tr>
+<td><strong>协商缓存</strong>是在资源过期之后，询问服务器，当前缓存资源是否有变化，无变化则继续使用缓存资源，有变化则让服务器发送最新数据</td>
+</tr>
+</tbody></table>
+<h3 id="Last-Modified-x2F-If-Modified-Since"><a href="#Last-Modified-x2F-If-Modified-Since" class="headerlink" title="Last-Modified&#x2F;If-Modified-Since"></a><strong>Last-Modified&#x2F;If-Modified-Since</strong></h3><table>
+<thead>
+<tr>
+<th>通过文件修改时间判断资源是否有更新</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>当浏览器发起某一个资源的请求到服务器，<strong>服务器向浏览器返回响应</strong>，并且在<strong>响应头</strong>中设置last-modified属性，属性值为资源最后修改的时间。</td>
+</tr>
+<tr>
+<td>当浏览器二次请求时，<strong>浏览器向服务器发出请求</strong>，并且在请求头中设置if-modified-since属性，属性值为之前响应头中保存的last-modified的值。</td>
+</tr>
+<tr>
+<td>服务器拿到请求头中的if-modefied-since属性后，对比请求资源最后的修改时间。</td>
+</tr>
+<tr>
+<td>如服务器资源未更新，则返回304状态码，继续调用缓存。</td>
+</tr>
+</tbody></table>
+<p><strong>缺点</strong>：精确度较低</p>
+<h3 id="Etag-x2F-If-None-Match"><a href="#Etag-x2F-If-None-Match" class="headerlink" title="Etag&#x2F;If-None-Match"></a>Etag&#x2F;If-None-Match</h3><p>与上述的协商缓存相同，但是精确度更高，优先级也高于Last-Modified&#x2F;If-Modified-Since</p>
+<h2 id="分级缓存策略"><a href="#分级缓存策略" class="headerlink" title="分级缓存策略"></a>分级缓存策略</h2><p>当一个资源被二次加载时，首先判断一级缓存中max-age跟s-maxage和Expirse情况。如果一级缓存失效，则考虑二级缓存Etag&#x2F;If-None-Match和Last-Modified&#x2F;If-Modified-Since的情况。如果二级缓存也失效，则直接从服务器重新拉取数据，这属于三级缓存。</p>
 
       </section>
 
       
       
         <nav class="article-nav">
+          
           
             <div class="article-nav-item layout-padding">
   <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
@@ -174,21 +217,6 @@
       
         <a href="/2023/01/09/http%E6%A8%A1%E5%9D%97/" itemprop="url">
           <h2 class="card-text--title text-ellipsis">http模块</h2>
-        </a>
-      
-      <div class="card-text--row">Newer</div>
-    </div>
-  </article>
-</div>
-          
-          
-            <div class="article-nav-item layout-padding">
-  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
-    
-    <div class="card-text">
-      
-        <a href="/2023/01/06/path%E6%A8%A1%E5%9D%97/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">path系统路径模块</h2>
         </a>
       
       <div class="card-text--row">Older</div>
