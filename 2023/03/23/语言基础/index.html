@@ -219,8 +219,11 @@
 <li><p>任何涉及NaN的操作始终返回NaN。用isNaN()函数判断NaN</p>
 </li>
 <li><p>NaN不等于NaN</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">NaN</span> == <span class="title class_">NaN</span>); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
 </li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">NaN</span> == <span class="title class_">NaN</span>); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+
+<ol start="40">
 <li><p>把一个值传给isNaN()后，该函数会尝试把它转换为数值。某些非数值的值可以直接转换成数值，如字符串”10”或布尔值。布尔值true可以转换为数值1，因此返回false。</p>
 </li>
 <li><p>数值转换函数Number()、parseInt()、parseFloat()，Number()函数转换规则</p>
