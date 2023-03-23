@@ -104,7 +104,7 @@
           <h2 class="title-sub-wrap">
             <strong>JonahC</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2023-03-23T07:38:37.870Z" itemprop="datePublished">2023-03-23</time>
+            <time  class="article-date" datetime="2023-03-23T07:52:49.880Z" itemprop="datePublished">2023-03-23</time>
           </h2>
           <ul class="wrap-list dark">
   
@@ -218,17 +218,42 @@
 </li>
 <li><p>任何涉及NaN的操作始终返回NaN。用isNaN()函数判断NaN</p>
 </li>
-<li><pre><code class="js">console.log(NaN == NaN); // false
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">40. 把一个值传给isNaN()后，该函数会尝试把它转换为数值。某些非数值的值可以直接转换成数值，如字符串&quot;10&quot;或布尔值。布尔值true可以转换为数值1，因此返回false。</span><br><span class="line"></span><br><span class="line">41. 数值转换函数Number()、parseInt()、parseFloat()，Number()函数转换规则</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-布尔值 -&gt; true-1，false-0
-数值 -&gt; 直接返回
-null -&gt; 返回0
-undefined -&gt; 返回NaN
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">42.  js中的字符串是不可改变的，一旦创建，要修改某个变量中的字符串值，就必须先销毁原始的字符串，然后放新的字符串进去。</span><br><span class="line"></span><br><span class="line">43. 字符串值也有toString()方法，该方法只是简单地返回自身的一个副本。null和undefined值没有toString()方法。不确定是不是null和undefined的时候，可以直接调用转型函数String()。null-&gt;&quot;null&quot; undefined-&gt;&quot;undefined&quot;</span><br><span class="line"></span><br><span class="line">44. 模板字面量 保留换行符，顾名思义，在定义模板时非常有用，比如定义HTML时</span><br><span class="line"></span><br><span class="line">45. 模板字面量不是字符串，而是一种特殊的表达式，所有插入的值都会使用toString()强制转型为字符串。模板也可以插入自己之前的值。</span><br><span class="line"></span><br><span class="line">46. switch语句在比较每个条件的值时，会使用全等操作符，因此不会强制转换数据类型。字符串&quot;10&quot;不等于数值10</span><br><span class="line"></span><br><span class="line">47. == 和!= 两个操作符会先进行强制类型转换，再确定是否相等。布尔值转换为1和0，字符串转换为数值，有一个操作数是对象就调用valueOf()方法用原始值比较。null和undefined不转换。**NaN不等于NaN！！！！**</span><br><span class="line"></span><br><span class="line">48. 全等和不全等操作符不进行转换。</span><br><span class="line"></span><br><span class="line">49. for-in循环要迭代的变量是null或者undefined，则不执行循环体</span><br><span class="line"></span><br><span class="line">50. for-in用于枚举对象中的非符号键属性，for-of循环用于遍历可迭代对象的元素</span><br><span class="line"></span><br><span class="line">51. 标签语句，用于给标签起名字，典型使用场景是嵌套循环</span><br><span class="line"></span><br><span class="line">```js</span><br><span class="line">   let num = 0;</span><br><span class="line">   outermost:</span><br><span class="line">    for (let i = 0; i &lt; 10; i++) &#123;</span><br><span class="line">      for (let j = 0; j &lt; 10; j++) &#123;</span><br><span class="line">        if (i == 5 &amp;&amp; j == 5) &#123;</span><br><span class="line">          break outermost;</span><br><span class="line">        &#125;</span><br><span class="line">        num++;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    console.log(num); // 55</span><br></pre></td></tr></table></figure>
-</code></pre>
+<li><p>NaN不等于NaN</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">NaN</span> == <span class="title class_">NaN</span>); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p><del>with语句，用途试讲代码作用域设置为特定的对象，</del></p>
+<li><p>把一个值传给isNaN()后，该函数会尝试把它转换为数值。某些非数值的值可以直接转换成数值，如字符串”10”或布尔值。布尔值true可以转换为数值1，因此返回false。</p>
 </li>
+<li><p>数值转换函数Number()、parseInt()、parseFloat()，Number()函数转换规则</p>
+</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">布尔值 -&gt; true-1，false-0</span><br><span class="line">数值 -&gt; 直接返回</span><br><span class="line">null -&gt; 返回0</span><br><span class="line">undefined -&gt; 返回NaN</span><br></pre></td></tr></table></figure>
+
+<ol start="42">
+<li><p>js中的字符串是不可改变的，一旦创建，要修改某个变量中的字符串值，就必须先销毁原始的字符串，然后放新的字符串进去。</p>
+</li>
+<li><p>字符串值也有toString()方法，该方法只是简单地返回自身的一个副本。null和undefined值没有toString()方法。不确定是不是null和undefined的时候，可以直接调用转型函数String()。null-&gt;”null” undefined-&gt;”undefined”</p>
+</li>
+<li><p>模板字面量 保留换行符，顾名思义，在定义模板时非常有用，比如定义HTML时</p>
+</li>
+<li><p>模板字面量不是字符串，而是一种特殊的表达式，所有插入的值都会使用toString()强制转型为字符串。模板也可以插入自己之前的值。</p>
+</li>
+<li><p>switch语句在比较每个条件的值时，会使用全等操作符，因此不会强制转换数据类型。字符串”10”不等于数值10</p>
+</li>
+<li><p>&#x3D;&#x3D; 和!&#x3D; 两个操作符会先进行强制类型转换，再确定是否相等。布尔值转换为1和0，字符串转换为数值，有一个操作数是对象就调用valueOf()方法用原始值比较。null和undefined不转换。<strong>NaN不等于NaN！！！！</strong></p>
+</li>
+<li><p>全等和不全等操作符不进行转换。</p>
+</li>
+<li><p>for-in循环要迭代的变量是null或者undefined，则不执行循环体</p>
+</li>
+<li><p>for-in用于枚举对象中的非符号键属性，for-of循环用于遍历可迭代对象的元素</p>
+</li>
+<li><p>标签语句，用于给标签起名字，典型使用场景是嵌套循环</p>
+</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> num = <span class="number">0</span>;</span><br><span class="line"><span class="attr">outermost</span>:</span><br><span class="line"> <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">   <span class="keyword">for</span> (<span class="keyword">let</span> j = <span class="number">0</span>; j &lt; <span class="number">10</span>; j++) &#123;</span><br><span class="line">     <span class="keyword">if</span> (i == <span class="number">5</span> &amp;&amp; j == <span class="number">5</span>) &#123;</span><br><span class="line">       <span class="keyword">break</span> outermost;</span><br><span class="line">     &#125;</span><br><span class="line">     num++;</span><br><span class="line">   &#125;</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="variable language_">console</span>.<span class="title function_">log</span>(num); <span class="comment">// 55</span></span><br></pre></td></tr></table></figure>
+
+<ol start="52">
+<li><del>with语句，用途试讲代码作用域设置为特定的对象，</del></li>
 </ol>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> qs = location.<span class="property">search</span>.<span class="title function_">substring</span>(<span class="number">1</span>);</span><br><span class="line"><span class="keyword">let</span> hostName = location.<span class="property">hostname</span>;</span><br><span class="line"><span class="keyword">let</span> url = location.<span class="property">href</span>;</span><br></pre></td></tr></table></figure>
 
