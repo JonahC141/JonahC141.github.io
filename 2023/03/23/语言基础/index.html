@@ -24,7 +24,7 @@
 
   
 
-  <title>path系统路径模块 | JonahC</title>
+  <title>第三章 语言基础 | JonahC</title>
 
   
 
@@ -100,20 +100,20 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">path系统路径模块</h1>
+          <h1 class="title-wrap">第三章 语言基础</h1>
           <h2 class="title-sub-wrap">
             <strong>JonahC</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2023-01-06T03:41:35.214Z" itemprop="datePublished">2023-01-06</time>
+            <time  class="article-date" datetime="2023-03-23T07:12:26.325Z" itemprop="datePublished">2023-03-23</time>
           </h2>
           <ul class="wrap-list dark">
   
-    <li><a href="/categories/node%E5%9F%BA%E7%A1%80/">📒 node基础</a></li>
+    <li><a href="/categories/%E7%BA%A2%E5%AE%9D%E4%B9%A6/">📒 红宝书</a></li>
   
 </ul>
           <ul class="wrap-list dark">
   
-    <li><a href="/tags/path/">🏷️ path</a></li>
+    <li><a href="/tags/JavaScript/">🏷️ JavaScript</a></li>
   
 </ul>
         </div>
@@ -137,27 +137,102 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h1 id="path系统路径模块"><a href="#path系统路径模块" class="headerlink" title="path系统路径模块"></a>path系统路径模块</h1><p>最常用的相对路径为.&#x2F;即可。</p>
-<h2 id="resolve"><a href="#resolve" class="headerlink" title="resolve()"></a>resolve()</h2><p>resolve方法用于获取一个路径的绝对路径</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(</span><br><span class="line">    path.<span class="title function_">resolve</span>(<span class="string">&#x27;./&#x27;</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+        <h1 id="第三章-语言基础"><a href="#第三章-语言基础" class="headerlink" title="第三章 语言基础"></a>第三章 语言基础</h1><ol>
+<li>js 区分大小写，typeof 是关键字，Typeof则是完全有效的函数名</li>
+<li>驼峰式命名-惯例</li>
+<li>关键字、保留字、true、false、null不能作为标识符</li>
+<li>预处理指令，切换到严格模式，</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&quot;use strict&quot;</span>;</span><br></pre></td></tr></table></figure>
 
-<p>resolve方法可以拼接绝对路径，</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(</span><br><span class="line">	path.<span class="title function_">resolve</span>(<span class="string">&#x27;./&#x27;</span>,<span class="string">&#x27;test&#x27;</span>,<span class="string">&#x27;1.js&#x27;</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li>把预处理指令放到函数体开头，即可单独指定一个函数在严格模式下执行。</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">doSomething</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="string">&quot;use strict&quot;</span>;</span><br><span class="line">  <span class="comment">// 函数体</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="join"><a href="#join" class="headerlink" title="join()"></a>join()</h2><p>Join方法用于连接路径，返回连接的结果</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(</span><br><span class="line">	path.<span class="title function_">join</span>(<span class="string">&#x27;demo&#x27;</span>,<span class="string">&#x27;text&#x27;</span>,<span class="string">&#x27;1.js&#x27;</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<ol start="6">
+<li>加分号有助于在某些情况下提升性能！</li>
+<li>js变量是松散类型的（弱类型），变量可以用于保存任何类型的数据，var、const、</li>
+<li>在不初始化的情况下，变量会保存一个特殊值：undefined</li>
+<li>一个函数如果没有使用return语句指定返回值，就会返回一个undefined。</li>
+<li>使用var在一个函数内部定义一个变量，意味着该变量将在函数退出时被销毁。</li>
+<li>在定义变量时，省略var操作符，可创建全局变量（不推荐，难维护）</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">test</span>(<span class="params"></span>) &#123;</span><br><span class="line">  message=<span class="string">&quot;hi&quot;</span>;     <span class="comment">//全局变量</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">test</span>();</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(message); <span class="comment">// &quot;hi&quot;</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="parse"><a href="#parse" class="headerlink" title="parse()"></a>parse()</h2><p>parse方法用于解析一个文件路径或者一个文件名称</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(</span><br><span class="line">    path.<span class="title function_">parse</span>(<span class="string">&#x27;./test/index.html&#x27;</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<ol start="12">
+<li>定义多个变量：</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> message = <span class="string">&quot;hi&quot;</span>,</span><br><span class="line">    found = <span class="literal">false</span>,</span><br><span class="line">    age = <span class="number">29</span>;</span><br></pre></td></tr></table></figure>
 
-<p>返回一个对象，</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">root</span>: <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">  <span class="attr">dir</span>: <span class="string">&#x27;./test&#x27;</span>,</span><br><span class="line">  <span class="attr">base</span>: <span class="string">&#x27;index.html&#x27;</span>,</span><br><span class="line">  <span class="attr">ext</span>: <span class="string">&#x27;.html&#x27;</span>,</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;index&#x27;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="13">
+<li><p>在严格模式下，不能定义名为<strong>eval</strong>和<strong>arguments</strong>的变量</p>
+</li>
+<li><p>使用var声明的变量会自动提升到函数作用域顶部</p>
+</li>
+<li><p>var 可以反复多次声明同一变量，let则不可以</p>
+</li>
+<li><p>var-函数作用域，let-块作用域</p>
+</li>
+<li><p>let和const之前的部分被称为“暂时性死区”</p>
+</li>
+<li><p>用let在全局作用域中声明的变量不会成为window对象的属性（var 声明的变量则会）</p>
+</li>
+<li><p>在let出现之前，for循环定义的迭代变量会渗透到循环体外部</p>
+</li>
+<li><p>const变量引用的是一个对象，那么修改对象内部属性并不违反const的限制</p>
+</li>
+<li><p>不能用const声明迭代变量（会自增）</p>
+</li>
+<li><p><strong>！！！不使用var有助于提升代码质量！！！</strong>😎</p>
+</li>
+<li><p>const 优先 let次之</p>
+</li>
+<li><p>js中有6种简单数据类型：Undefined、Null、Boolean、String、Number、Symbol，有1种复杂数据类型Object</p>
+</li>
+<li><p>因为js是弱类型的语言，因此需要typeof确定数据类型</p>
+</li>
+<li><p>typeof null 返回“object”，null被认为是一个空对象的引用，null和对象的二进制代码都为000</p>
+</li>
+<li><p>用var和let声明变量，但未初始化，相当于给变量赋了undefined值</p>
+</li>
+<li><p>一个函数如果没有使用return语句指定返回值，就会返回一个undefined值</p>
+</li>
+<li><p>对于未声明的变量，唯一有效的操作符是typeof</p>
+</li>
+<li><p>在定义将来要保存对象值的变量时， 建议使用null来初始化，与undefined区分。undefined是由null派生来的，表面上相等而已。</p>
+</li>
+<li><p>将其他类型的值转为布尔值，调用特定的转型函数Boolean()方法。</p>
+</li>
+<li><p>if等流程控制语句会自动执行布尔值转换。</p>
+</li>
+<li><p>浮点的精确度最高可达17位小数，但是0.1+0.2不等于0.3，其他使用相同格式的语言也有这个问题，并非js独有。所以永远不要测试某个特定的浮点值。</p>
+</li>
+<li><p>JS最小的数值保存在Number.MIN_VALUE中，最大的数值保存在Number.MAX_VALUE，超出范围的数值会被自动转换为infinity（或者-infinity），使用isFinite()函数可以判断数值是否在范围内。</p>
+</li>
+<li><p>Number.POSITIVE_INFINITY→-Infinity，当然超出范围的脏东西并不多见，了解一下就行。</p>
+</li>
+<li><p>如果计算返回正Infinity或者负Infinity，则该值不能在进一步用于任何计算。</p>
+</li>
+<li><p>0、+0或-0相除会返回NaN，如果分子是非0值，则会返回 Infinity 或 -Infinity</p>
+</li>
+<li><p>任何涉及NaN的操作始终返回NaN。用isNaN()函数判断NaN</p>
+</li>
+<li><p>&#96;&#96;&#96;js<br>console.log(NaN &#x3D;&#x3D; NaN); &#x2F;&#x2F; false</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">40. 把一个值传给isNaN()后，该函数会尝试把它转换为数值。某些非数值的值可以直接转换成数值，如字符串&quot;10&quot;或布尔值。布尔值true可以转换为数值1，因此返回false。</span><br><span class="line"></span><br><span class="line">41. 数值转换函数Number()、parseInt()、parseFloat()，Number()函数转换规则</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>布尔值 -&gt; true-1，false-0<br>数值 -&gt; 直接返回<br>null -&gt; 返回0<br>undefined -&gt; 返回NaN</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">42.  js中的字符串是不可改变的，一旦创建，要修改某个变量中的字符串值，就必须先销毁原始的字符串，然后放新的字符串进去。</span><br><span class="line"></span><br><span class="line">43. 字符串值也有toString()方法，该方法只是简单地返回自身的一个副本。null和undefined值没有toString()方法。不确定是不是null和undefined的时候，可以直接调用转型函数String()。null-&gt;&quot;null&quot; undefined-&gt;&quot;undefined&quot;</span><br><span class="line"></span><br><span class="line">44. 模板字面量 保留换行符，顾名思义，在定义模板时非常有用，比如定义HTML时</span><br><span class="line"></span><br><span class="line">45. 模板字面量不是字符串，而是一种特殊的表达式，所有插入的值都会使用toString()强制转型为字符串。模板也可以插入自己之前的值。</span><br><span class="line"></span><br><span class="line">46. switch语句在比较每个条件的值时，会使用全等操作符，因此不会强制转换数据类型。字符串&quot;10&quot;不等于数值10</span><br><span class="line"></span><br><span class="line">47. == 和!= 两个操作符会先进行强制类型转换，再确定是否相等。布尔值转换为1和0，字符串转换为数值，有一个操作数是对象就调用valueOf()方法用原始值比较。null和undefined不转换。**NaN不等于NaN！！！！**</span><br><span class="line"></span><br><span class="line">48. 全等和不全等操作符不进行转换。</span><br><span class="line"></span><br><span class="line">49. for-in循环要迭代的变量是null或者undefined，则不执行循环体</span><br><span class="line"></span><br><span class="line">50. for-in用于枚举对象中的非符号键属性，for-of循环用于遍历可迭代对象的元素</span><br><span class="line"></span><br><span class="line">51. 标签语句，用于给标签起名字，典型使用场景是嵌套循环</span><br><span class="line"></span><br><span class="line">    ``` js</span><br><span class="line">        let num = 0;</span><br><span class="line">        outermost:</span><br><span class="line">        for (let i = 0; i &lt; 10; i++) &#123;</span><br><span class="line">          for (let j = 0; j &lt; 10; j++) &#123;</span><br><span class="line">            if (i == 5 &amp;&amp; j == 5) &#123;</span><br><span class="line">              break outermost;</span><br><span class="line">            &#125;</span><br><span class="line">            num++;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        console.log(num); // 55</span><br><span class="line"></span><br><span class="line">51. ~~with语句，用途试讲代码作用域设置为特定的对象，~~</span><br><span class="line"></span><br><span class="line">```js</span><br><span class="line">    let qs = location.search.substring(1);</span><br><span class="line">    let hostName = location.hostname;</span><br><span class="line">    let url = location.href;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p><del>如果用with语句就可以少些一些代码</del></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">with</span>(<span class="params">location</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> qs = search.<span class="title function_">substring</span>(<span class="number">1</span>);</span><br><span class="line">  <span class="keyword">let</span> hostName = hostname;</span><br><span class="line">  <span class="keyword">let</span> url = href;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p><strong>root</strong>——根盘符</p>
-<p><strong>dir</strong>——当前文件夹</p>
-<p><strong>base</strong>——当前文件</p>
-<p><strong>ext</strong>——当前文件的后缀名</p>
-<p><strong>name</strong>——当前文件的名字</p>
+<p><del>在这个语句的内部，每个变量首先会被认为是一个局部变量。如果没有找到该局部变量，则会搜索location对象，看它是否有一个同名的属性。</del></p>
+<p><del><strong>严格模式不允许使用with语句，否则会抛出错误</strong>（烦死了，不早说）</del></p>
+<p><del>with影响性能，且难于调试其中的代码。</del></p>
+<ol start="52">
+<li>不需要指定函数的返回值，因为任何函数可以在任何时候返回任何值！JavaScript，我的爱人~！</li>
+<li>不指定返回值的函数实际上会返回特殊值undefined。</li>
+</ol>
 
       </section>
 
@@ -170,8 +245,8 @@
     
     <div class="card-text">
       
-        <a href="/2023/01/06/url%E7%BD%91%E7%BB%9C%E8%B7%AF%E5%BE%84%E8%A7%A3%E6%9E%90%E6%A8%A1%E5%9D%97/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">url网络路径解析模块</h2>
+        <a href="/2023/03/23/%E5%8F%98%E9%87%8F%E3%80%81%E4%BD%9C%E7%94%A8%E5%9F%9F%E4%B8%8E%E5%86%85%E5%AD%98/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">第四章 变量、作用域与内存</h2>
         </a>
       
       <div class="card-text--row">Newer</div>
@@ -185,8 +260,8 @@
     
     <div class="card-text">
       
-        <a href="/2022/12/26/http%E7%8A%B6%E6%80%81%E7%A0%81/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">http状态码</h2>
+        <a href="/2023/01/29/http%E7%BC%93%E5%AD%98/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">http缓存</h2>
         </a>
       
       <div class="card-text--row">Older</div>

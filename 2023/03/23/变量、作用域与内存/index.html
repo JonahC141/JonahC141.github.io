@@ -24,7 +24,7 @@
 
   
 
-  <title>path系统路径模块 | JonahC</title>
+  <title>第四章 变量、作用域与内存 | JonahC</title>
 
   
 
@@ -100,20 +100,20 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">path系统路径模块</h1>
+          <h1 class="title-wrap">第四章 变量、作用域与内存</h1>
           <h2 class="title-sub-wrap">
             <strong>JonahC</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2023-01-06T03:41:35.214Z" itemprop="datePublished">2023-01-06</time>
+            <time  class="article-date" datetime="2023-03-23T07:13:54.191Z" itemprop="datePublished">2023-03-23</time>
           </h2>
           <ul class="wrap-list dark">
   
-    <li><a href="/categories/node%E5%9F%BA%E7%A1%80/">📒 node基础</a></li>
+    <li><a href="/categories/%E7%BA%A2%E5%AE%9D%E4%B9%A6/">📒 红宝书</a></li>
   
 </ul>
           <ul class="wrap-list dark">
   
-    <li><a href="/tags/path/">🏷️ path</a></li>
+    <li><a href="/tags/JavaScript/">🏷️ JavaScript</a></li>
   
 </ul>
         </div>
@@ -137,27 +137,36 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h1 id="path系统路径模块"><a href="#path系统路径模块" class="headerlink" title="path系统路径模块"></a>path系统路径模块</h1><p>最常用的相对路径为.&#x2F;即可。</p>
-<h2 id="resolve"><a href="#resolve" class="headerlink" title="resolve()"></a>resolve()</h2><p>resolve方法用于获取一个路径的绝对路径</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(</span><br><span class="line">    path.<span class="title function_">resolve</span>(<span class="string">&#x27;./&#x27;</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-
-<p>resolve方法可以拼接绝对路径，</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(</span><br><span class="line">	path.<span class="title function_">resolve</span>(<span class="string">&#x27;./&#x27;</span>,<span class="string">&#x27;test&#x27;</span>,<span class="string">&#x27;1.js&#x27;</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-
-<h2 id="join"><a href="#join" class="headerlink" title="join()"></a>join()</h2><p>Join方法用于连接路径，返回连接的结果</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(</span><br><span class="line">	path.<span class="title function_">join</span>(<span class="string">&#x27;demo&#x27;</span>,<span class="string">&#x27;text&#x27;</span>,<span class="string">&#x27;1.js&#x27;</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-
-<h2 id="parse"><a href="#parse" class="headerlink" title="parse()"></a>parse()</h2><p>parse方法用于解析一个文件路径或者一个文件名称</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(</span><br><span class="line">    path.<span class="title function_">parse</span>(<span class="string">&#x27;./test/index.html&#x27;</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-
-<p>返回一个对象，</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">root</span>: <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">  <span class="attr">dir</span>: <span class="string">&#x27;./test&#x27;</span>,</span><br><span class="line">  <span class="attr">base</span>: <span class="string">&#x27;index.html&#x27;</span>,</span><br><span class="line">  <span class="attr">ext</span>: <span class="string">&#x27;.html&#x27;</span>,</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;index&#x27;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>root</strong>——根盘符</p>
-<p><strong>dir</strong>——当前文件夹</p>
-<p><strong>base</strong>——当前文件</p>
-<p><strong>ext</strong>——当前文件的后缀名</p>
-<p><strong>name</strong>——当前文件的名字</p>
+        <h1 id="第四章-变量、作用域与内存"><a href="#第四章-变量、作用域与内存" class="headerlink" title="第四章 变量、作用域与内存"></a>第四章 变量、作用域与内存</h1><p>松散类型的变量在脚本生命周期内可以改变，这样的变量很强大，但是问题也很多。</p>
+<hr>
+<ol>
+<li>只有引用数据类型可以动态添加后面可以使用的属性</li>
+<li>基本数据类型大小固定，保存在栈内存上。</li>
+<li>引用数据类型的复制，只是复制了地址，具体看栈和堆</li>
+<li>js中所有的函数的参数都是<strong>按值传递</strong>的，函数外的值会被复制到函数内部的参数中，同样遵循基本数据类型和引用数据类型复制的规则。</li>
+<li>按值传参时，值会被复制到一个局部变量。</li>
+<li>typeof虽然对原始值很有用，可以判断一个变量是否为基本数据类型，但是对引用数据类型的用处不大。因为我们通常不关心一个值是不是对象，而是想知道它是什么类型的对象。</li>
+<li>let和const的顶级声明不会定义在全局上下文中，但在作用域链解析上效果是一样的。</li>
+<li>上下文在其所有代码都执行完毕后会被销毁，包括定义在它上面的所有变量和函数（全局上下文在应用程序退出前才会被销毁，比如关闭网页或退出浏览器）。</li>
+<li>每个函数调用都有自己的上下文。当代码执行流进入函数时，函数的上下文被推到一个上下文栈上。在函数执行完之后，上下文栈会弹出该函数上下文，将控制权返还给之前的执行上下文。ECMAScript程序的执行流就是通过这个上下文栈进行控制的。</li>
+<li>上下文中的代码在执行的时候，会创建变量对象的一个<strong>作用域链</strong>，这个作用域链决定了各级上下文中的代码，在访问变量和函数时的顺序。代码正在执行的上下文的变量对象始终位于作用域链的最前端。全局上下文的变量对象始终是作用域链的最后一个变量对象。</li>
+<li>上下文之间的连接是线性的、有序的，每个上下文都可以到上一级上下文中去搜索变量和函数，但任何上下文都不能到下一级上下文中去搜索。局部上下文首先从自己的变量对象开始搜索变量和函数，搜不到就去搜索上一级变量对象。</li>
+<li>函数参数被认为是当前上下文中的变量，与其他变量遵循相同的访问规则。</li>
+<li>执行上下文主要有全局上下文和函数上下文两种（eval()调用内部存在第三种上下文）</li>
+<li>with语句会向作用域链前端添加制定的对象，但是with影响性能难于调试，直接不看！！</li>
+<li>catch语句，会创建一个新的变量对象，这个变量对象会包含要抛出的错误对象的声明。</li>
+<li>变量未经声明就被初始化，那么它就会被自动添加到全局上下文。严格模式不允许！！</li>
+<li>let的行为非常适合在小循环中声明迭代变量，使用var会导致迭代变量泄漏。</li>
+<li>严格来讲，let在js运行时也会被提升，但由于“暂时性死区”的缘故，不能在声明之前使用let变量，与var的提升是不一样的。</li>
+<li>const 定义的声明的对象不能再被重新赋值，但是对象的键不受限制。如果想让整个对象都不能被修改，可使用Object.freeze()。</li>
+<li>开发实践表明，要尽可能多的使用const声明</li>
+<li>访问局部变量比访问全局变量要快，因为不用切换作用域，不过这个差异微不足道！</li>
+<li>垃圾回收机制，有两种主要的策略：标记清理和引用计数</li>
+<li>开发者不知道什么时候会收集辣鸡，因此在写代码的时候就要做到：无论什么时候开始收集垃圾，都能让它尽快结束工作。你不想加班，那就别让变量加班！</li>
+<li>如果数据不再必要，那么把它设置为null，从而释放其引用，这也可以叫作解除引用。解除引用的关键在于确保相关的值已经不在上下文里了。</li>
+<li>用let和const有助于改善代码风格，可以提升性能</li>
+<li>性能优化和内存泄漏，暂不讨论。</li>
+</ol>
 
       </section>
 
@@ -170,8 +179,8 @@
     
     <div class="card-text">
       
-        <a href="/2023/01/06/url%E7%BD%91%E7%BB%9C%E8%B7%AF%E5%BE%84%E8%A7%A3%E6%9E%90%E6%A8%A1%E5%9D%97/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">url网络路径解析模块</h2>
+        <a href="/2023/03/23/git%E6%8C%87%E4%BB%A4/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">Git常用指令</h2>
         </a>
       
       <div class="card-text--row">Newer</div>
@@ -185,8 +194,8 @@
     
     <div class="card-text">
       
-        <a href="/2022/12/26/http%E7%8A%B6%E6%80%81%E7%A0%81/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">http状态码</h2>
+        <a href="/2023/03/23/%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">第三章 语言基础</h2>
         </a>
       
       <div class="card-text--row">Older</div>
