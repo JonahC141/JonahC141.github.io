@@ -24,7 +24,7 @@
 
   
 
-  <title>url网络路径解析模块 | JonahC</title>
+  <title>Script标签的defer属性和async属性 | JonahC</title>
 
   
 
@@ -100,20 +100,20 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">url网络路径解析模块</h1>
+          <h1 class="title-wrap">Script标签的defer属性和async属性</h1>
           <h2 class="title-sub-wrap">
             <strong>JonahC</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2023-01-06T03:54:57.582Z" itemprop="datePublished">2023-01-06</time>
+            <time  class="article-date" datetime="2023-03-28T15:04:27.535Z" itemprop="datePublished">2023-03-28</time>
           </h2>
           <ul class="wrap-list dark">
   
-    <li><a href="/categories/node%E5%9F%BA%E7%A1%80/">📒 node基础</a></li>
+    <li><a href="/categories/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/">📒 面试总结</a></li>
   
 </ul>
           <ul class="wrap-list dark">
   
-    <li><a href="/tags/url/">🏷️ url</a></li>
+    <li><a href="/tags/JavaScript/">🏷️ JavaScript</a></li>
   
 </ul>
         </div>
@@ -137,29 +137,95 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h1 id="url网络路径解析模块"><a href="#url网络路径解析模块" class="headerlink" title="url网络路径解析模块"></a>url网络路径解析模块</h1><p>一个url通常	包含以下部分</p>
+        <h1 id="script标签的defer属性和async属性"><a href="#script标签的defer属性和async属性" class="headerlink" title="script标签的defer属性和async属性"></a>script标签的defer属性和async属性</h1><ul>
+<li>作用：解决脚本下载阻塞网页渲染的问题</li>
+</ul>
+<h2 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h2><blockquote>
+<p>直接使用<code>script</code>脚本的话，<code>html</code>会按照顺序来加载并执行脚本，在脚本加载和执行的过程中，会阻塞后续的<code>DOM</code>渲染。</p>
+</blockquote>
+<p>现在大家习惯于在页面中引用各种的第三方脚本，如果脚本出现了一些小问题，就会使得页面白屏。<br>好在<code>script</code>提供了<code>async</code>和<code>defer</code>，这两个属性使得<code>script</code>都不会阻塞<code>DOM</code>的渲染。<br>但既然会存在两个属性，那么这两个属性之间肯定是有差异的。</p>
+<h2 id="defer属性"><a href="#defer属性" class="headerlink" title="defer属性"></a>defer属性</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;a.js&quot;</span> <span class="attr">defer</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;b.js&quot;</span> <span class="attr">defer</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>加了defer属性script标签的页面，运行流程如下：</p>
+<blockquote>
 <ol>
-<li>协议类型：http 、 https</li>
-<li>域名： <a target="_blank" rel="noopener" href="http://www.baidu.com/">www.baidu.com</a></li>
-<li>接口： &#x2F;w</li>
-<li>query查询语句： wd&#x3D;123&amp;test&#x3D;abc</li>
+<li>浏览器开始解析HTML页面</li>
+<li>遇到有defer属性的script标签，浏览器继续往下面解析页面，且会并行下载script标签的外部js文件</li>
+<li>解析完HTML页面，再执行刚下载的js脚本（<code>defer</code>脚本会在文档渲染完毕后，<code>DOMContentLoaded</code>事件调用前执行，即刚刚解析完，且可保证执行顺序就是他们在页面上的先后顺序）</li>
 </ol>
-<h2 id="parse"><a href="#parse" class="headerlink" title="parse()"></a>parse()</h2><p>parse</p>
-<p>方法用于解析网络路径</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> url = <span class="built_in">require</span>(<span class="string">&#x27;url&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(</span><br><span class="line">    url.<span class="title function_">parse</span>(<span class="string">&#x27;http://www.baidu.com:80/s?wd=123&amp;test=abc#360&#x27;</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h5 id="注意事项："><a href="#注意事项：" class="headerlink" title="注意事项："></a>注意事项：</h5><ul>
+<li><ol>
+<li>内置js代码的script标签，以及动态生成的script标签，defer属性不生效</li>
+</ol>
+</li>
+<li><ol start="2">
+<li>有defer属性的script标签脚本文件里不能使用document.write方法</li>
+</ol>
+</li>
+<li><ol start="3">
+<li>defer脚本会在DOMContentLoaded和load事件之前执行。</li>
+</ol>
+</li>
+<li><ol start="4">
+<li>defer只适用于外联脚本，如果script标签没有指定src属性，只是内联脚本，不要使用defer如果有多个声明了defer的脚本，则会按顺序下载和执行</li>
+</ol>
+</li>
+</ul>
+<h2 id="async属性"><a href="#async属性" class="headerlink" title="async属性"></a>async属性</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;a.js&quot;</span> <span class="attr">async</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;b.js&quot;</span> <span class="attr">async</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>返回结果为一个对象</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">protocol</span>: <span class="string">&#x27;http:&#x27;</span>,</span><br><span class="line">  <span class="attr">slashes</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">auth</span>: <span class="literal">null</span>,</span><br><span class="line">  <span class="attr">host</span>: <span class="string">&#x27;www.baidu.com:80&#x27;</span>,</span><br><span class="line">  <span class="attr">port</span>: <span class="string">&#x27;80&#x27;</span>,</span><br><span class="line">  <span class="attr">hostname</span>: <span class="string">&#x27;www.baidu.com&#x27;</span>,</span><br><span class="line">  <span class="attr">hash</span>: <span class="string">&#x27;#360&#x27;</span>,</span><br><span class="line">  <span class="attr">search</span>: <span class="string">&#x27;?wd=123&amp;test=abc&#x27;</span>,</span><br><span class="line">  <span class="attr">query</span>: <span class="string">&#x27;wd=123&amp;test=abc&#x27;</span>,</span><br><span class="line">  <span class="attr">pathname</span>: <span class="string">&#x27;/s&#x27;</span>,</span><br><span class="line">  <span class="attr">path</span>: <span class="string">&#x27;/s?wd=123&amp;test=abc&#x27;</span>,</span><br><span class="line">  <span class="attr">href</span>: <span class="string">&#x27;http://www.baidu.com:80/s?wd=123&amp;test=abc#360&#x27;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>其中protocol是协议类型，通常有http或者https。</p>
-<p>host是完整的域名。port是端口。</p>
-<p>hostname是域名的名称。</p>
-<p>hash是网络地址中带#号的部分，</p>
-<p>search是网络地址中？和它后边的查询语句。</p>
-<p>query是没有问好的查询语句。</p>
-<p>pathanme是接口。</p>
-<p>path是接口+search，</p>
-<p>href是完整的网络地址。</p>
+<p>流程如下：</p>
+<blockquote>
+<ol>
+<li>浏览器开始解析页面</li>
+<li>遇到有async属性的script标签，会继续往下解析，并且同时另开进程下载脚本</li>
+<li>脚本下载完毕，浏览器停止解析，开始执行脚本，执行完毕后继续往下解析</li>
+</ol>
+</blockquote>
+<h5 id="注意事项：-1"><a href="#注意事项：-1" class="headerlink" title="注意事项："></a>注意事项：</h5><ul>
+<li><ol>
+<li>无法保证脚本的执行顺序，哪个脚本先下载完毕，就先执行哪个。</li>
+</ol>
+</li>
+<li><ol start="2">
+<li>也不能使用document.write方法。</li>
+</ol>
+</li>
+<li><ol start="3">
+<li><code>async</code>脚本会在加载完毕后执行，<code>async</code>脚本的加载不计入<code>DOMContentLoaded</code>事件统计，async会在load事件之前执行，但并不能确保与DOMContentLoaded的执行先后顺序。</li>
+</ol>
+</li>
+<li><ol start="4">
+<li>只适用于外联脚本，这一点和defer一致，如果有多个声明了async的脚本，其下载和执行也是异步的，不能确保彼此的先后顺序。</li>
+</ol>
+</li>
+</ul>
+<h4 id="使用场景区分："><a href="#使用场景区分：" class="headerlink" title="使用场景区分："></a>使用场景区分：</h4><blockquote>
+<ol>
+<li>脚本之间没有依赖关系的，使用async</li>
+<li>脚本之间有依赖关系的，使用defer</li>
+<li>若同时使用async和defer，defer不起作用，async生效</li>
+</ol>
+</blockquote>
+<h3 id="推荐的应用场景"><a href="#推荐的应用场景" class="headerlink" title="推荐的应用场景"></a>推荐的应用场景</h3><h4 id="defer"><a href="#defer" class="headerlink" title="defer"></a>defer</h4><p>如果你的脚本代码依赖于页面中的<code>DOM</code>元素（文档是否解析完毕），或者被其他脚本文件依赖。<br> <strong>例：</strong></p>
+<ol>
+<li>评论框</li>
+<li>代码语法高亮</li>
+<li><code>polyfill.js</code></li>
+</ol>
+<h3 id="async"><a href="#async" class="headerlink" title="async"></a>async</h3><p>如果你的脚本并不关心页面中的<code>DOM</code>元素（文档是否解析完毕），并且也不会产生其他脚本需要的数据。<br> <strong>例：</strong></p>
+<ul>
+<li>百度统计</li>
+</ul>
+<p>如果不太能确定的话，用<code>defer</code>总是会比<code>async</code>稳定。。</p>
+<hr>
+<h3 id="普通script"><a href="#普通script" class="headerlink" title="普通script"></a>普通script</h3><p>文档解析的过程中，如果遇到<code>script</code>脚本，就会停止页面的解析进行下载（但是Chrome会做一个优化，如果遇到<code>script</code>脚本，会快速的查看后边有没有需要下载其他资源的，如果有的话，会先下载那些资源，然后再进行下载<code>script</code>所对应的资源，这样能够节省一部分下载的时间）<br>资源的下载是在解析过程中进行的，虽说<code>script1</code>脚本会很快的加载完毕，但是他前边的<code>script2</code>并没有加载&amp;执行，所以他只能处于一个挂起的状态，等待<code>script2</code>执行完毕后再执行。<br>当这两个脚本都执行完毕后，才会继续解析页面。</p>
+<p>缺点：</p>
+<ul>
+<li>如果外部脚本加载时间很长（一直无法完成下载），那么浏览器就会一直等待脚本下载完成，造成网页长时间失去响应，浏览器就会呈现“假死”状态，这被称为“阻塞效应”</li>
+<li>如果浏览器会同时并行下载<code>a.js</code>和<code>b.js</code>，但是，执行时会保证先执行<code>a.js</code>，然后再执行<code>b.js</code>，即使后者先下载完成，也是如此。也就是说，脚本的执行顺序由它们在页面中的出现顺序决定，这是为了保证脚本之间的依赖关系不受到破坏。当然，加载这两个脚本都会产生“阻塞效应”，必须等到它们都加载完成，浏览器才会继续页面渲染。</li>
+</ul>
+<p><strong>因此</strong>，通常应该把<code>&lt;script&gt;</code>元素放到页面末尾，介于主内容之后及<code>&lt;/body&gt;</code>标签之前。</p>
 
       </section>
 
@@ -167,28 +233,14 @@
       
         <nav class="article-nav">
           
-            <div class="article-nav-item layout-padding">
-  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
-    
-    <div class="card-text">
-      
-        <a href="/2023/01/09/http%E6%A8%A1%E5%9D%97/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">http模块</h2>
-        </a>
-      
-      <div class="card-text--row">Newer</div>
-    </div>
-  </article>
-</div>
-          
           
             <div class="article-nav-item layout-padding">
   <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
     
     <div class="card-text">
       
-        <a href="/2023/01/06/path%E6%A8%A1%E5%9D%97/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">path系统路径模块</h2>
+        <a href="/2023/03/28/%E5%9F%BA%E6%9C%AC%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">第五章 基本引用类型</h2>
         </a>
       
       <div class="card-text--row">Older</div>
