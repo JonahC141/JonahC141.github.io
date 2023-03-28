@@ -24,7 +24,7 @@
 
   
 
-  <title>Git常用指令 | JonahC</title>
+  <title>第五章 基本引用类型 | JonahC</title>
 
   
 
@@ -100,20 +100,20 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">Git常用指令</h1>
+          <h1 class="title-wrap">第五章 基本引用类型</h1>
           <h2 class="title-sub-wrap">
             <strong>JonahC</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2023-03-23T07:17:14.606Z" itemprop="datePublished">2023-03-23</time>
+            <time  class="article-date" datetime="2023-03-28T06:46:52.162Z" itemprop="datePublished">2023-03-28</time>
           </h2>
           <ul class="wrap-list dark">
   
-    <li><a href="/categories/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/">📒 面试总结</a></li>
+    <li><a href="/categories/%E7%BA%A2%E5%AE%9D%E4%B9%A6/">📒 红宝书</a></li>
   
 </ul>
           <ul class="wrap-list dark">
   
-    <li><a href="/tags/%E5%B7%A5%E5%85%B7/">🏷️ 工具</a></li>
+    <li><a href="/tags/JavaScript/">🏷️ JavaScript</a></li>
   
 </ul>
         </div>
@@ -137,38 +137,46 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h1 id="Git指令"><a href="#Git指令" class="headerlink" title="Git指令"></a>Git指令</h1><p>下载安装git之后，做一下配置</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name &quot;Your Name&quot;</span><br><span class="line">$ git config --global user.email &quot;email@example.com&quot;</span><br></pre></td></tr></table></figure>
+        <h1 id="第5章-基本引用类型"><a href="#第5章-基本引用类型" class="headerlink" title="第5章 基本引用类型"></a>第5章 基本引用类型</h1><ol>
+<li>直接把表示日期的字符串传给Date函数，那么Date会在后台调用Date.parse()。</li>
+<li>Date.now()方法，发挥方法执行时的日期和时间的毫秒数，这个方法可以用于代码分析中。</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 起始时间</span></span><br><span class="line"><span class="keyword">let</span> start = <span class="title class_">Date</span>.<span class="title function_">now</span>();</span><br><span class="line"><span class="comment">// 调用函数</span></span><br><span class="line"><span class="title function_">doSomething</span>();</span><br><span class="line"><span class="comment">// 结束时间</span></span><br><span class="line"><span class="keyword">let</span> stop = <span class="title class_">Date</span>.<span class="title function_">now</span>(),</span><br><span class="line">result = stop - start;</span><br></pre></td></tr></table></figure>
 
-<p>以此来设置名字和邮箱</p>
-<h5 id="初始化仓库"><a href="#初始化仓库" class="headerlink" title="初始化仓库"></a>初始化仓库</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>常用年月日和时分秒，直接to就行</li>
+<li>正则表达式详见正则。</li>
+<li>每当用到某个原始值的方法或属性时，后台都会创建一个相应原始包装类型的对象，从而暴露出操作原始值的各种方法。</li>
+<li>引用类型与原始值包装类型的主要区别在于对象的生命周期，通过呢我实例化引用类型后，得到的实例会在离开作用域时被销毁，而自动创建的包装对象则只存在于访问它的那行代码执行期间。不能在运行时给原始值添加属性和方法。</li>
+<li>所有对象布尔表达式中都会自动转换为true</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> falseObject = <span class="keyword">new</span> <span class="title class_">Boolean</span>(<span class="literal">false</span>);</span><br><span class="line"><span class="keyword">let</span> result = falseObject &amp;&amp; <span class="literal">true</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(result) <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
 
-<h5 id="添加文件到仓库"><a href="#添加文件到仓库" class="headerlink" title="添加文件到仓库"></a>添加文件到仓库</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add “文件名” //添加到缓存区</span><br><span class="line">git commit -m &#x27;&quot;你所附带的信息&quot;&#x27; //添加到本地仓库</span><br></pre></td></tr></table></figure>
+<ol start="8">
+<li>原始值boolean在使用 instanceof 与Boolean类比较时返回false。</li>
+<li>强烈建议，永远不要使用Boolean对象，理解原理很重要。</li>
+<li>toFixed()方法返回指定小数点位数的数值字符串。</li>
+<li>es6新增了Number.isInteger()方法，用于辨别一个数值是否保存为整数。</li>
+<li>在全局作用域中定义的变量和函数都会变成Global对象的属性。</li>
+<li>eval()是一个完整的ECMAScript解释器，它接收一个参数，即一个要执行的 JS 字符串。被执行的代码与该上下文拥有相同的作用域链。</li>
+<li>浏览器将window对象实现为Global对象的代理。因此在浏览器中，所有全局作用域中声明的变量和函数都变成了window的属性。</li>
+<li>调用一个简单返回this的函数是在任何执行上下文中获取Global对象的通用方式。</li>
+<li>Math对象的min()和max()方法，用于确定一组数值中的最小值和最大值，这两个方法都接受任意多个参数。</li>
+<li>使用这两个方法可以避免使用额外的条件控制语句。</li>
+<li>关于方法处理舍入：</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Math</span>.<span class="title function_">ceil</span>()<span class="comment">//向上舍入为最接近的整数</span></span><br><span class="line"><span class="title class_">Math</span>.<span class="title function_">floor</span>()<span class="comment">//向下舍入为最近的整数</span></span><br><span class="line"><span class="title class_">Math</span>.<span class="title function_">round</span>()<span class="comment">//方法执行四舍五入</span></span><br></pre></td></tr></table></figure>
 
-<h5 id="添加到远程仓库"><a href="#添加到远程仓库" class="headerlink" title="添加到远程仓库"></a>添加到远程仓库</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push </span><br></pre></td></tr></table></figure>
+<ol start="19">
+<li>random()方法，返回一个0~1范围内的随机数，其中包含0但不包含1。</li>
+</ol>
 
-<p>将本地仓库的代码上传到默认远程仓库</p>
-<h5 id="查看提交日志"><a href="#查看提交日志" class="headerlink" title="查看提交日志"></a><strong>查看提交日志</strong></h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git log</span><br></pre></td></tr></table></figure>
-
-<h5 id="进入分支"><a href="#进入分支" class="headerlink" title="进入分支"></a>进入分支</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout master</span><br><span class="line">git pull</span><br></pre></td></tr></table></figure>
-
-<h5 id="查看所有分支"><a href="#查看所有分支" class="headerlink" title="查看所有分支"></a>查看所有分支</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -a</span><br></pre></td></tr></table></figure>
-
-<h5 id="合并到当前分支"><a href="#合并到当前分支" class="headerlink" title="合并到当前分支"></a>合并到当前分支</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge 分支名</span><br></pre></td></tr></table></figure>
-
-<h5 id="查看合并后的状态"><a href="#查看合并后的状态" class="headerlink" title="查看合并后的状态"></a>查看合并后的状态</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
-
-<p><strong>查看提交日志</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git log</span><br></pre></td></tr></table></figure>
-
-<h5 id="切换分支"><a href="#切换分支" class="headerlink" title="切换分支"></a>切换分支</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout 分支名</span><br></pre></td></tr></table></figure>
-
-<h5 id=""><a href="#" class="headerlink" title=""></a></h5>
       </section>
 
       
       
         <nav class="article-nav">
+          
           
             <div class="article-nav-item layout-padding">
   <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
@@ -177,21 +185,6 @@
       
         <a href="/2023/03/23/%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/" itemprop="url">
           <h2 class="card-text--title text-ellipsis">第三章 语言基础</h2>
-        </a>
-      
-      <div class="card-text--row">Newer</div>
-    </div>
-  </article>
-</div>
-          
-          
-            <div class="article-nav-item layout-padding">
-  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
-    
-    <div class="card-text">
-      
-        <a href="/2023/03/23/%E5%8F%98%E9%87%8F%E3%80%81%E4%BD%9C%E7%94%A8%E5%9F%9F%E4%B8%8E%E5%86%85%E5%AD%98/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">第四章 变量、作用域与内存</h2>
         </a>
       
       <div class="card-text--row">Older</div>
