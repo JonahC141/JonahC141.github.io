@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#3367D6"/>
+  <link rel="apple-touch-icon" href="/icons-192.png">
+  <link rel="manifest" href="/manifest.json">
+  
+
+
+  <meta name="generator" content="Hexo 6.3.0">
+
+  
+
+  
+
+  
+    <meta name="author" content="JonahC">
+  
+
+  
+
+  
+
+  <title>Map &amp; Set | JonahC</title>
+
+  
+
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@1.1.3/index.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs@9.16.2/styles/monokai.css">
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+</head>
+<body>
+  <div class="root-container">
+    
+<!-- header container -->
+<header class="header-container post">
+  
+    <div class="post-image" style="background-image: url(https://pic.3gbizhi.com/2020/1026/20201026030658240.jpg)"></div>
+  
+
+  <!-- navbar -->
+<nav class="navbar">
+  <div class="navbar-content">
+    <!-- logo -->
+    <div class="navbar-logo">
+      <a href="/">
+        
+          JonahC
+        
+      </a>
+    </div>
+    <!-- link -->
+    <div class="navbar-link">
+      <div class="navbar-btn">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <ul class="navbar-list">
+        
+          <li class="navbar-list-item"><a href="/">首页</a></li>
+        
+          <li class="navbar-list-item"><a target="_blank" rel="noopener" href="https://damengcoder.gitee.io/blog/">友链</a></li>
+        
+          <li class="navbar-list-item"><a href="/about">关于</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+    <div class="header-content">
+      <div class="post-text layout-block">
+        <div class="layout-margin">
+          <h1 class="title-wrap">Map &amp; Set</h1>
+          <h2 class="title-sub-wrap">
+            <strong>JonahC</strong>
+            <span>发布于</span>
+            <time  class="article-date" datetime="2023-04-01T07:33:28.223Z" itemprop="datePublished">2023-04-01</time>
+          </h2>
+          <ul class="wrap-list dark">
+  
+    <li><a href="/categories/%E7%BA%A2%E5%AE%9D%E4%B9%A6/">📒 红宝书</a></li>
+  
+</ul>
+          <ul class="wrap-list dark">
+  
+    <li><a href="/tags/JavaScript/">🏷️ JavaScript</a></li>
+  
+</ul>
+        </div>
+      </div>
+    </div>
+  
+
+  
+  
+  
+</header>
+
+    <!-- 文章 -->
+
+<!-- 文章内容 -->
+<div class="body-container">
+  <article class="content-container layout-block post-container">
+    <div class="article-info">
+      
+      
+      
+      
+      <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
+        <h1 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h1><h5 id="Map是一种新的集合类型，为这门语言带来了真正的键-x2F-值存储机制！"><a href="#Map是一种新的集合类型，为这门语言带来了真正的键-x2F-值存储机制！" class="headerlink" title="Map是一种新的集合类型，为这门语言带来了真正的键&#x2F;值存储机制！"></a>Map是一种新的集合类型，为这门语言带来了真正的键&#x2F;值存储机制！</h5><p>​	<strong>Map</strong>是一组键值对的结构，具有极快的查找速度。</p>
+<p><strong>Map</strong>对象常用方法：</p>
+<p><code>Map.set()</code> ——为Map对象<strong>添加</strong>或<strong>更新</strong>一个指定了<code>key</code>和<code>value</code>的键值对。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> map = <span class="keyword">new</span> <span class="title class_">Map</span>();</span><br><span class="line">map.<span class="title function_">set</span>(<span class="number">1</span>,<span class="string">&#x27;一&#x27;</span>);</span><br><span class="line">map.<span class="title function_">set</span>(<span class="number">2</span>,<span class="string">&#x27;二&#x27;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(map);<span class="comment">//Map(2) &#123; 1 =&gt; &#x27;一&#x27;, 2 =&gt; &#x27;二&#x27; &#125;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p><code>Map.delete()</code>——用于删除Map对象中指定的元素。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> map = <span class="keyword">new</span> <span class="title class_">Map</span>();</span><br><span class="line">map.<span class="title function_">set</span>(<span class="number">1</span>,<span class="string">&#x27;一&#x27;</span>);</span><br><span class="line">map.<span class="title function_">set</span>(<span class="number">2</span>,<span class="string">&#x27;二&#x27;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(map);<span class="comment">//Map(2) &#123; 1 =&gt; &#x27;一&#x27;, 2 =&gt; &#x27;二&#x27; &#125;</span></span><br><span class="line">map.<span class="title function_">delete</span>(<span class="number">1</span>,<span class="string">&quot;一&quot;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(map);</span><br></pre></td></tr></table></figure>
+
+
+
+<p><code>Map.has()</code>——方法返回一个布尔值，判断具有指定键的元素是否存在。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> map = <span class="keyword">new</span> <span class="title class_">Map</span>();</span><br><span class="line">map.<span class="title function_">set</span>(<span class="number">1</span>,<span class="string">&#x27;一&#x27;</span>);</span><br><span class="line">map.<span class="title function_">set</span>(<span class="number">2</span>,<span class="string">&#x27;二&#x27;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(map);<span class="comment">//Map(2) &#123; 1 =&gt; &#x27;一&#x27;, 2 =&gt; &#x27;二&#x27; &#125;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(map.<span class="title function_">has</span>(<span class="number">2</span>))<span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p><code>Map.get()</code>——方法从Map对象返回指定的元素。如果与所提供的键相关联的值是一个对象，那么你将获得该对象的引用，对该对象所做的任何更改都会有效地在 <code>Map</code> 对象中修改它。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> map = <span class="keyword">new</span> <span class="title class_">Map</span>();</span><br><span class="line">map.<span class="title function_">set</span>(<span class="number">1</span>,<span class="string">&#x27;一&#x27;</span>);</span><br><span class="line">map.<span class="title function_">set</span>(<span class="number">2</span>,<span class="string">&#x27;二&#x27;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(map);<span class="comment">//Map(2) &#123; 1 =&gt; &#x27;一&#x27;, 2 =&gt; &#x27;二&#x27; &#125;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(map.<span class="title function_">get</span>(<span class="number">2</span>))<span class="comment">//二</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p><code>Map.clear()</code>——清空Map对象中的所有元素。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> map = <span class="keyword">new</span> <span class="title class_">Map</span>();</span><br><span class="line">map.<span class="title function_">set</span>(<span class="number">1</span>,<span class="string">&#x27;一&#x27;</span>);</span><br><span class="line">map.<span class="title function_">set</span>(<span class="number">2</span>,<span class="string">&#x27;二&#x27;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(map);<span class="comment">//Map(2) &#123; 1 =&gt; &#x27;一&#x27;, 2 =&gt; &#x27;二&#x27; &#125;</span></span><br><span class="line">map.<span class="title function_">clear</span>()</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(map)<span class="comment">//Map(0) &#123;&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p><code>Map.forEach()</code>——与数组的<code>forEach()</code>相似</p>
+<p><code>Map.keys()</code>——返回一个引用的<u>迭代器</u>对象，包含按照顺序插入<code>Map</code>对象的中每个元素的<code>key</code>值</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span>  m = <span class="keyword">new</span> <span class="title class_">Map</span>()</span><br><span class="line">m.<span class="title function_">set</span>(<span class="string">&#x27;name&#x27;</span>,<span class="string">&#x27;choi&#x27;</span>)</span><br><span class="line">.<span class="title function_">set</span>(<span class="string">&#x27;age&#x27;</span>,<span class="number">22</span>)</span><br><span class="line">.<span class="title function_">set</span>(<span class="string">&#x27;gender&#x27;</span>,<span class="string">&#x27;male&#x27;</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(m.<span class="title function_">keys</span>());<span class="comment">//[Map Iterator] &#123; &#x27;name&#x27;, &#x27;age&#x27;, &#x27;gender&#x27; &#125;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p><code>Map.values()</code>——方法返回一个新的<u>迭代器</u>对象。它包含按顺序插入 <code>Map</code> 对象中每个元素的 <code>value</code> 值。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span>  m = <span class="keyword">new</span> <span class="title class_">Map</span>()</span><br><span class="line">m.<span class="title function_">set</span>(<span class="string">&#x27;name&#x27;</span>,<span class="string">&#x27;choi&#x27;</span>)</span><br><span class="line">.<span class="title function_">set</span>(<span class="string">&#x27;age&#x27;</span>,<span class="number">22</span>)</span><br><span class="line">.<span class="title function_">set</span>(<span class="string">&#x27;gender&#x27;</span>,<span class="string">&#x27;male&#x27;</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(m.<span class="title function_">values</span>());<span class="comment">//[Map Iterator] &#123; &#x27;choi&#x27;, 22, &#x27;male&#x27; &#125;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p><code>Map.entries()</code>——方法返回一个新的<u>迭代器</u>对象，其中包含 <code>Map</code> 对象中按插入顺序排列的每个元素的 <code>[key, value]</code> 对。在这种情况下，这个迭代器对象也是一个可迭代对象，因此可以使用 for-of 循环。当使用 <code>[Symbol.iterator]</code> 时，它返回一个函数，该函数在调用时返回迭代器本身。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span>  m = <span class="keyword">new</span> <span class="title class_">Map</span>()</span><br><span class="line">m.<span class="title function_">set</span>(<span class="string">&#x27;name&#x27;</span>,<span class="string">&#x27;choi&#x27;</span>)</span><br><span class="line">.<span class="title function_">set</span>(<span class="string">&#x27;age&#x27;</span>,<span class="number">22</span>)</span><br><span class="line">.<span class="title function_">set</span>(<span class="string">&#x27;gender&#x27;</span>,<span class="string">&#x27;male&#x27;</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(m.<span class="title function_">entries</span>());</span><br><span class="line"><span class="comment">//	[Map Entries] &#123;</span></span><br><span class="line"><span class="comment">// 	 [ &#x27;name&#x27;, &#x27;choi&#x27; ],</span></span><br><span class="line"><span class="comment">// 	 [ &#x27;age&#x27;, 22 ],</span></span><br><span class="line"><span class="comment">// 	 [ &#x27;gender&#x27;, &#x27;male&#x27; ]</span></span><br><span class="line"><span class="comment">//	&#125;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="关于Map"><a href="#关于Map" class="headerlink" title="关于Map"></a>关于Map</h5><ol>
+<li>由于一个key只能对应一个value，所以，多次对一个key放入value，后面的值会把前面的值覆盖。</li>
+<li>可以通过<code>Map.size</code>确定map实例的长度。</li>
+<li>可以通过<code>Symbol.itertor</code>生成<code>[key,value]</code>形式的数组，它引用<code>entries()</code>。</li>
+<li>选择Object还是Map？<ul>
+<li>Map大约可以比Object多存储50%的键值对。</li>
+<li>如果代码涉及大量插入操作，那么显然Map的性能更佳。</li>
+<li>大量查找操作，那么某些情况下Object更好。</li>
+<li>涉及大量删除操作，选择Map。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h1 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h1><p>​	<strong>ES6新增的Set是一种新集合类型，为这门语言带来集合数据结构。Set在很多方面都像是加强的Map。</strong></p>
+<p><code>Set</code>对象允许你储存任何类型的唯一值，无论是原始值或者是对象引用。</p>
+<p><code>Set</code>对象是值的集合，其中的元素是<strong>唯一的</strong>。</p>
+<hr>
+<p><strong>特别地，<code>NaN</code> 和 <code>undefined</code> 都可以被存储在 Set 中，<code>NaN</code> 之间被视为相同的值（NaN 被认为是相同的，尽管 NaN !&#x3D;&#x3D; NaN）。</strong></p>
+<hr>
+<p><code>Set.add()</code>——将插入一个具有指定值的新元素到 <code>Set</code> 对象中。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> s = <span class="keyword">new</span> <span class="title class_">Set</span>()</span><br><span class="line">s.<span class="title function_">add</span>(<span class="string">&#x27;hello&#x27;</span>)</span><br><span class="line">.<span class="title function_">add</span>(<span class="string">&#x27;world&#x27;</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(s);<span class="comment">//Set(2) &#123; &#x27;hello&#x27;, &#x27;world&#x27; &#125;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p><code>Set.delete()</code>——从 <code>Set</code> 对象中删除指定的值（如果该值在 <code>Set</code> 中）。</p>
+<p>​	<code>delete()</code>返回一个布尔值，表示集合中是否存在要删除的值</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> s = <span class="keyword">new</span> <span class="title class_">Set</span>()</span><br><span class="line">s.<span class="title function_">add</span>(<span class="string">&#x27;hello&#x27;</span>)</span><br><span class="line">.<span class="title function_">add</span>(<span class="string">&#x27;world&#x27;</span>)</span><br><span class="line"><span class="keyword">let</span> res = s.<span class="title function_">delete</span>(<span class="string">&#x27;hello&#x27;</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(res);<span class="comment">//true</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(s);<span class="comment">//Set(1) &#123; &#x27;world&#x27; &#125;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p><code>Set.has()</code>——返回一个布尔值来指示对应的值是否存在于 <code>Set</code> 对象中。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> s = <span class="keyword">new</span> <span class="title class_">Set</span>()</span><br><span class="line">s.<span class="title function_">add</span>(<span class="string">&#x27;hello&#x27;</span>)</span><br><span class="line">.<span class="title function_">add</span>(<span class="string">&#x27;world&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(s.<span class="title function_">has</span>(<span class="string">&#x27;world&#x27;</span>));<span class="comment">//true</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p><code>Set.clear()</code>——移除 <code>Set</code> 对象中所有元素。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> s = <span class="keyword">new</span> <span class="title class_">Set</span>()</span><br><span class="line">s.<span class="title function_">add</span>(<span class="string">&#x27;hello&#x27;</span>)</span><br><span class="line">.<span class="title function_">add</span>(<span class="string">&#x27;world&#x27;</span>)</span><br><span class="line">s.<span class="title function_">clear</span>()</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(s);<span class="comment">//Set(0) &#123;&#125;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p><code>Set.forEach()</code>——和数组的forEach方法很相似，只不过Set结构的键名就是键值，所以第一个参数与第二个参数的值永远都是一样的。</p>
+<p><code>Set.keys()</code>——同<code>values()</code></p>
+<p><code>Set.values()</code>——同<code>keys()</code></p>
+<p><code>Set.entries()</code>——返回一个新的迭代器对象，最终得到一个[value,value]形式的数组</p>
+<p>这部分跟<code>Map</code>很相似，不必多说</p>
+<h5 id="关于Set"><a href="#关于Set" class="headerlink" title="关于Set"></a>关于Set</h5><ol>
+<li>Set可以用于数组去重</li>
+<li>Set集合是大小写敏感的</li>
+</ol>
+
+      </section>
+
+      
+      
+        <nav class="article-nav">
+          
+          
+            <div class="article-nav-item layout-padding">
+  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
+    
+    <div class="card-text">
+      
+        <a href="/2023/03/28/script/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">Script标签的defer属性和async属性</h2>
+        </a>
+      
+      <div class="card-text--row">Older</div>
+    </div>
+  </article>
+</div>
+          
+        </nav>
+      
+
+      <section class="page-message-container layout-padding">
+        
+
+
+  
+  
+
+  
+  
+
+
+      </section>
+    </div>
+    <div class="widget-info">
+      <section class="widget-author widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-body">
+    
+      <img src="http://lc-TBZ2C7B3.cn-n1.lcfile.com/3Hcp0z6AaJPfRHMSFgFHsWnsV6QMjVTv/portrait.png" class="soft-size--round soft-style--box" alt="JonahC">
+    
+    
+      <h2>JonahC</h2>
+    
+    
+      <p>不想写描述</p>
+    
+
+    <div class="count-box">
+      <div class="count-box--item">
+        <svg class="icon icon-article" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M240.51564747 647.74217627h196.07203239c16.59071043 0 30.16492806-13.57421762 30.16492805-30.16492806V165.10332731c0-33.18142087-30.16492806-60.32985613-60.32985612-60.32985611H245.04038668C225.43318342 104.7734712 210.35071939 119.85593522 210.35071939 139.46313845V617.57724821c0 16.59071043 13.57421762 30.16492806 30.16492808 30.16492806z m663.62841731-452.47392089v482.63884894c0 33.18142087-27.14843525 60.32985613-60.32985612 60.32985613H180.18579134c-33.18142087 0-60.32985613-27.14843525-60.32985612-60.32985613V195.26825538c-49.77213131 0-90.49478418 40.72265287-90.49478417 90.49478417v452.4739209c0 49.77213131 40.72265287 90.49478418 90.49478417 90.49478417h286.56681657c16.59071043 0 30.16492806 13.57421762 30.16492807 30.16492807s13.57421762 30.16492806 30.16492805 30.16492806h90.49478418c16.59071043 0 30.16492806-13.57421762 30.16492805-30.16492806s13.57421762-30.16492806 30.16492807-30.16492807h286.56681657c49.77213131 0 90.49478418-40.72265287 90.49478417-90.49478417V285.76303955c0-49.77213131-40.72265287-90.49478418-90.49478417-90.49478417zM587.41232014 647.74217627h191.54729318c19.60720323 0 34.68966726-15.08246403 34.68966729-34.68966727V134.93839925c0-16.59071043-13.57421762-30.16492806-30.16492808-30.16492805H617.57724821c-30.16492806 0-60.32985613 27.14843525-60.32985612 60.32985611v452.4739209c0 16.59071043 13.57421762 30.16492806 30.16492805 30.16492806z" fill="currentColor"></path>
+</svg>
+        <span>16</span>
+      </div>
+      <div class="count-box--item">
+        <svg class="icon icon-categories" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M900.3614811 257.09082106h-339.81629553l-67.96326003-101.9448889c-19.41807444-29.12711113-48.54518557-43.69066667-82.52681443-43.69066667H123.6385189c-53.39970333 0-97.09036999 43.69066667-97.09037113 97.09036999v582.54222222c0 53.39970333 43.69066667 97.09036999 97.09037113 97.09037002h776.7229622c53.39970333 0 97.09036999-43.69066667 97.09037113-97.09037002V354.18119104c0-53.39970333-43.69066667-97.09036999-97.09037113-97.09036998z m-97.09036999 242.72592554H220.72888889c-24.27259221 0-48.54518557-24.27259221-48.54518556-48.54518556s24.27259221-48.54518557 48.54518556-48.54518444h582.54222222c24.27259221 0 48.54518557 24.27259221 48.54518556 48.54518444s-24.27259221 48.54518557-48.54518556 48.54518556z" fill="currentColor"></path>
+</svg>
+        5
+      </div>
+      <div class="count-box--item">
+        <svg class="icon icon-tags" viewBox="0 0 1098 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M283.42180005 272q0-28.38857157-20.09142843-48.48000001t-48.47999998-20.09142842-48.48000002 20.09142842-20.09142846 48.48000001 20.09142846 48.48 48.48000002 20.09142843 48.47999998-20.09142843 20.09142843-48.48zM855.0332285 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.03999997 263.58857157q-20.9142853 19.81714313-48.75428534 19.81714312-28.38857157 0-48.20571468-19.81714312l-383.04-383.58857157q-20.36571468-19.81714313-34.55999999-54.10285688t-14.19428534-62.6742853l0-222.85714313q0-27.84000002 20.36571469-48.20571469t48.2057147-20.36571466l222.85714313 0q28.38857157 0 62.6742853 14.19428529t54.65142842 34.55999999l383.04000001 382.49142843q19.81714313 20.9142853 19.81714314 48.75428532zM1060.74751475 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.04 263.58857157q-20.9142853 19.81714313-48.75428531 19.81714312-19.26857155 0-31.61142843-7.47428531t-28.38857159-24.13714314l251.79428534-251.7942853q19.81714313-19.81714313 19.81714308-48.20571469 0-27.84000002-19.81714308-48.75428531l-383.04000001-382.49142845q-20.36571468-20.36571468-54.65142842-34.55999999t-62.67428532-14.19428534l120 0q28.38857157 0 62.67428532 14.19428534t54.65142842 34.55999999l383.03999998 382.49142845q19.81714313 20.9142853 19.81714314 48.75428531z" fill="currentColor"></path>
+</svg>
+        7
+      </div>
+    </div>
+  </div>
+</section>
+
+      
+
+      
+<section class="widet-notice widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <svg class="icon icon-notice" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M512 945.02305225v28.15620663a24.27259221 24.27259221 0 0 1-24.27259221 24.27259335H394.0352a48.54518557 48.54518557 0 0 1-41.74885888-23.78714112l-110.68302222-184.47170332a132.04290333 132.04290333 0 0 1-17.47626667-48.54518557h118.4502511a200.97706667 200.97706667 0 0 1 76.21594113 14.56355556l20.38897777 133.49925888a48.54518557 48.54518557 0 0 0 36.40888888 27.67075555l16.01991111 2.91271112a24.27259221 24.27259221 0 0 1 20.38897778 25.72894889zM997.45185223 463.45481443a194.18074112 194.18074112 0 0 1-38.8361489 116.50844445 24.75804445 24.75804445 0 0 1-36.4088889 0l-34.95253333-34.95253333a24.27259221 24.27259221 0 0 1-2.91271111-30.58346667 97.09036999 97.09036999 0 0 0 0-106.79940665 24.27259221 24.27259221 0 0 1 2.91271111-30.58346666l34.95253333-34.95253334a24.75804445 24.75804445 0 0 1 18.93262223-7.28177777 26.2144 26.2144 0 0 1 17.47626667 9.70903665A194.18074112 194.18074112 0 0 1 997.45185223 463.45481443z m-194.18074112-388.36148111v776.72296335a48.54518557 48.54518557 0 0 1-48.54518556 48.54518443h-28.64165888a48.54518557 48.54518557 0 0 1-33.98163001-14.07810332l-145.63555556-143.20829668A291.27111111 291.27111111 0 0 0 342.57730333 657.63555556H172.18370333a145.63555556 145.63555556 0 0 1-145.63555556-145.63555556v-97.09036999a145.63555556 145.63555556 0 0 1 145.63555556-145.63555556h170.3936a291.27111111 291.27111111 0 0 0 206.31703779-85.43952668l145.63555555-143.20829554a48.54518557 48.54518557 0 0 1 33.98162888-14.07810446H754.72592555a48.54518557 48.54518557 0 0 1 48.54518556 48.54518555z" fill="currentColor"></path>
+</svg>
+    <span>NOTICE</span>
+  </div>
+  <div class="widget-body">
+    <p>尝试日更，坚持周更，实在不行就不更了！</p>
+  </div>
+</section>
+
+
+      <section class="widget-categorys widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <svg class="icon icon-categories" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M900.3614811 257.09082106h-339.81629553l-67.96326003-101.9448889c-19.41807444-29.12711113-48.54518557-43.69066667-82.52681443-43.69066667H123.6385189c-53.39970333 0-97.09036999 43.69066667-97.09037113 97.09036999v582.54222222c0 53.39970333 43.69066667 97.09036999 97.09037113 97.09037002h776.7229622c53.39970333 0 97.09036999-43.69066667 97.09037113-97.09037002V354.18119104c0-53.39970333-43.69066667-97.09036999-97.09037113-97.09036998z m-97.09036999 242.72592554H220.72888889c-24.27259221 0-48.54518557-24.27259221-48.54518556-48.54518556s24.27259221-48.54518557 48.54518556-48.54518444h582.54222222c24.27259221 0 48.54518557 24.27259221 48.54518556 48.54518444s-24.27259221 48.54518557-48.54518556 48.54518556z" fill="currentColor"></path>
+</svg>
+    <span>CATEGORYS</span>
+  </div>
+  <div class="widget-body">
+    <ul class="categorys-list">
+      
+        <li class="categorys-list-item">
+          <a href="/categories/%E7%BA%A2%E5%AE%9D%E4%B9%A6/">
+            红宝书 (4)
+          </a>
+        </li>
+      
+        <li class="categorys-list-item">
+          <a href="/categories/vue/">
+            vue (3)
+          </a>
+        </li>
+      
+        <li class="categorys-list-item">
+          <a href="/categories/node%E5%9F%BA%E7%A1%80/">
+            node基础 (6)
+          </a>
+        </li>
+      
+        <li class="categorys-list-item">
+          <a href="/categories/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/">
+            面试总结 (2)
+          </a>
+        </li>
+      
+        <li class="categorys-list-item">
+          <a href="/categories/js%E5%9F%BA%E7%A1%80/">
+            js基础 (1)
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+</section>
+
+      <section class="widget-tags widget-item  layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <svg class="icon icon-tags" viewBox="0 0 1098 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M283.42180005 272q0-28.38857157-20.09142843-48.48000001t-48.47999998-20.09142842-48.48000002 20.09142842-20.09142846 48.48000001 20.09142846 48.48 48.48000002 20.09142843 48.47999998-20.09142843 20.09142843-48.48zM855.0332285 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.03999997 263.58857157q-20.9142853 19.81714313-48.75428534 19.81714312-28.38857157 0-48.20571468-19.81714312l-383.04-383.58857157q-20.36571468-19.81714313-34.55999999-54.10285688t-14.19428534-62.6742853l0-222.85714313q0-27.84000002 20.36571469-48.20571469t48.2057147-20.36571466l222.85714313 0q28.38857157 0 62.6742853 14.19428529t54.65142842 34.55999999l383.04000001 382.49142843q19.81714313 20.9142853 19.81714314 48.75428532zM1060.74751475 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.04 263.58857157q-20.9142853 19.81714313-48.75428531 19.81714312-19.26857155 0-31.61142843-7.47428531t-28.38857159-24.13714314l251.79428534-251.7942853q19.81714313-19.81714313 19.81714308-48.20571469 0-27.84000002-19.81714308-48.75428531l-383.04000001-382.49142845q-20.36571468-20.36571468-54.65142842-34.55999999t-62.67428532-14.19428534l120 0q28.38857157 0 62.67428532 14.19428534t54.65142842 34.55999999l383.03999998 382.49142845q19.81714313 20.9142853 19.81714314 48.75428531z" fill="currentColor"></path>
+</svg>
+    <span>TAGS</span>
+  </div>
+  <div class="widget-body">
+    <div class="tags-cloud">
+      <a href="/tags/JavaScript/" style="font-size: 20px;" class="tags-cloud-10">JavaScript</a> <a href="/tags/fs%E6%A8%A1%E5%9D%97/" style="font-size: 10px;" class="tags-cloud-0">fs模块</a> <a href="/tags/http/" style="font-size: 15px;" class="tags-cloud-5">http</a> <a href="/tags/path/" style="font-size: 10px;" class="tags-cloud-0">path</a> <a href="/tags/url/" style="font-size: 10px;" class="tags-cloud-0">url</a> <a href="/tags/vue/" style="font-size: 15px;" class="tags-cloud-5">vue</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 10px;" class="tags-cloud-0">工具</a>
+    </div>
+  </div>
+</section>
+    </div>
+  </article>
+</div>
+
+    <!-- footer container -->
+<footer id="footer" class="footer">
+  <div class="footer-container">
+    
+    <div class="social-icons">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+     
+    <p>&copy; 2023 <a href="/" target="_blank">JonahC</a></p>
+
+    
+
+    <p>Powered by <a href="https://hexo.io" target="_blank" rel="noopener noreferrer">Hexo</a> Theme - <a href="https://github.com/miiiku/flex-block" target="_blank" rel="noopener noreferrer author">flex-block</a></p>
+
+    <p>
+      <a href="javascript:;" id="theme-light">🌞 浅色</a>
+      <a href="javascript:;" id="theme-dark">🌛 深色</a>
+      <a href="javascript:;" id="theme-auto">🤖️ 自动</a>
+    </p>
+  </div>
+</footer>
+  </div>
+
+  <div class="back-to-top-fixed soft-size--round soft-style--box">
+    <svg class="icon icon-back-to-top" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+      <path d="M725.333333 426.666667c-12.8 0-21.333333-4.266667-29.866667-12.8l-213.333333-213.333333c-17.066667-17.066667-17.066667-42.666667 0-59.733333s42.666667-17.066667 59.733333 0l213.333333 213.333333c17.066667 17.066667 17.066667 42.666667 0 59.733333C746.666667 422.4 738.133333 426.666667 725.333333 426.666667z"></path>
+      <path d="M298.666667 426.666667c-12.8 0-21.333333-4.266667-29.866667-12.8-17.066667-17.066667-17.066667-42.666667 0-59.733333l213.333333-213.333333c17.066667-17.066667 42.666667-17.066667 59.733333 0s17.066667 42.666667 0 59.733333l-213.333333 213.333333C320 422.4 311.466667 426.666667 298.666667 426.666667z"></path>
+      <path d="M512 896c-25.6 0-42.666667-17.066667-42.666667-42.666667L469.333333 170.666667c0-25.6 17.066667-42.666667 42.666667-42.666667s42.666667 17.066667 42.666667 42.666667l0 682.666667C554.666667 878.933333 537.6 896 512 896z"></path>
+    </svg>
+  </div>
+
+  
+  <!-- aplayer -->
+
+
+<!-- dplayer -->
+
+
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+  
+  <!-- 尾部用户自定义相关内容 -->
+</body>
+</html>
