@@ -24,7 +24,7 @@
 
   
 
-  <title>第五章 基本引用类型 | JonahC</title>
+  <title>第六章 集合引用类型 | JonahC</title>
 
   
 
@@ -100,11 +100,11 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">第五章 基本引用类型</h1>
+          <h1 class="title-wrap">第六章 集合引用类型</h1>
           <h2 class="title-sub-wrap">
             <strong>JonahC</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2023-03-28T06:46:52.162Z" itemprop="datePublished">2023-03-28</time>
+            <time  class="article-date" datetime="2023-04-04T03:00:54.724Z" itemprop="datePublished">2023-04-04</time>
           </h2>
           <ul class="wrap-list dark">
   
@@ -137,39 +137,100 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h1 id="第5章-基本引用类型"><a href="#第5章-基本引用类型" class="headerlink" title="第5章 基本引用类型"></a>第5章 基本引用类型</h1><ol>
-<li>直接把表示日期的字符串传给Date函数，那么Date会在后台调用Date.parse()。</li>
-<li>Date.now()方法，发挥方法执行时的日期和时间的毫秒数，这个方法可以用于代码分析中。</li>
+        <h1 id="第6章-集合引用类型"><a href="#第6章-集合引用类型" class="headerlink" title="第6章 集合引用类型"></a>第6章 集合引用类型</h1><ol>
+<li>显式地创建Object的实例有两种方式，使用new操作符 &amp;Object构造函数。</li>
+<li>对象字面量是对象定义的简写形式，目的是为了简化包含大量属性的对象的创建。</li>
+<li>对象字面量表示法中，属性名可以是字符串或数值。数值属性会自动转换为字符串。</li>
+<li><strong>注意</strong>，在使用对象字面量表示法定义对象时，并不会实际调用Object构造函数。</li>
+<li>访问对象属性的方法有两种，一种是使用点语法来访问（面向对象语言的惯例），另一种是使用方括号来存取属性，在括号内使用属性名的字符串形式。方括号的优势是可以通过变量访问属性：</li>
 </ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 起始时间</span></span><br><span class="line"><span class="keyword">let</span> start = <span class="title class_">Date</span>.<span class="title function_">now</span>();</span><br><span class="line"><span class="comment">// 调用函数</span></span><br><span class="line"><span class="title function_">doSomething</span>();</span><br><span class="line"><span class="comment">// 结束时间</span></span><br><span class="line"><span class="keyword">let</span> stop = <span class="title class_">Date</span>.<span class="title function_">now</span>(),</span><br><span class="line">result = stop - start;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> propertyName = <span class="string">&quot;name&quot;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(person[propertyName]); <span class="comment">// &quot;Nicholas&quot;</span></span><br></pre></td></tr></table></figure>
 
-<ol start="3">
-<li>常用年月日和时分秒，直接to就行</li>
-<li>正则表达式详见正则。</li>
-<li>每当用到某个原始值的方法或属性时，后台都会创建一个相应原始包装类型的对象，从而暴露出操作原始值的各种方法。</li>
-<li>引用类型与原始值包装类型的主要区别在于对象的生命周期，通过呢我实例化引用类型后，得到的实例会在离开作用域时被销毁，而自动创建的包装对象则只存在于访问它的那行代码执行期间。不能在运行时给原始值添加属性和方法。</li>
-<li>所有对象布尔表达式中都会自动转换为true</li>
+<ol start="6">
+<li>当属性名为变量、数字、js的关键字和保留字时，只能用方括号法访问。”first name”中包含一个空格，所以不能使用点语法来访问。</li>
 </ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> falseObject = <span class="keyword">new</span> <span class="title class_">Boolean</span>(<span class="literal">false</span>);</span><br><span class="line"><span class="keyword">let</span> result = falseObject &amp;&amp; <span class="literal">true</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(result) <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">person[<span class="string">&quot;first name&quot;</span>] = <span class="string">&quot;Nicholas&quot;</span>;</span><br></pre></td></tr></table></figure>
 
-<ol start="8">
-<li>原始值boolean在使用 instanceof 与Boolean类比较时返回false。</li>
-<li>强烈建议，永远不要使用Boolean对象，理解原理很重要。</li>
-<li>toFixed()方法返回指定小数点位数的数值字符串。</li>
-<li>es6新增了Number.isInteger()方法，用于辨别一个数值是否保存为整数。</li>
-<li>在全局作用域中定义的变量和函数都会变成Global对象的属性。</li>
-<li>eval()是一个完整的ECMAScript解释器，它接收一个参数，即一个要执行的 JS 字符串。被执行的代码与该上下文拥有相同的作用域链。</li>
-<li>浏览器将window对象实现为Global对象的代理。因此在浏览器中，所有全局作用域中声明的变量和函数都变成了window的属性。</li>
-<li>调用一个简单返回this的函数是在任何执行上下文中获取Global对象的通用方式。</li>
-<li>Math对象的min()和max()方法，用于确定一组数值中的最小值和最大值，这两个方法都接受任意多个参数。</li>
-<li>使用这两个方法可以避免使用额外的条件控制语句。</li>
-<li>关于方法处理舍入：</li>
+<ol start="7">
+<li>通常情况下，点语法是首选的属性存取方式，除非访问属性时必须使用变量 。</li>
+<li>创建数组的方法有几种：</li>
 </ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Math</span>.<span class="title function_">ceil</span>()<span class="comment">//向上舍入为最接近的整数</span></span><br><span class="line"><span class="title class_">Math</span>.<span class="title function_">floor</span>()<span class="comment">//向下舍入为最近的整数</span></span><br><span class="line"><span class="title class_">Math</span>.<span class="title function_">round</span>()<span class="comment">//方法执行四舍五入</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<ol>
+<li>使用Array构造函数</li>
+<li>使用数组字面量表示法</li>
+<li>ES6新增用于创建数组的静态方法：from()和of()</li>
+</ol>
+<blockquote>
+<ul>
+<li><p>from()用于将类数组结构转换为数组实例</p>
+</li>
+<li><p>of()用于将一组参数转换为数组实例。</p>
+</li>
+</ul>
+</blockquote>
+</blockquote>
+<ol start="9">
+<li>在使用Array构造函数时，可以省略new操作符。</li>
+<li>与对象一样，在使用数组字面量表示法创建数组不会调用Array构造函数。</li>
+<li>Array.from()的第一个参数是一个类数组对象，即任何可迭代的结构，或者有一个length属性和可索引元素的结构。Array.from()还接收第二个可选的映射函数参数。这个函数可以直接增强新数组的值，而无须像调用Array.from().map()那样先创建一个中间数组。还可以接收第三个可选参数，用于指定映射函数中this的值。但这个重写的this值在箭头函数中不适用。</li>
+<li>Array.of()可以把一组参数转换为数组，而不考虑参数的数量或类型。</li>
+<li>ES6新增方法普遍将空位当成存在的元素，空位值为undefined。</li>
+<li>用Array.isArray()方法确定数组。</li>
+<li>sort()会在每一项上调用String()转型函数，然后比较字符串来决定顺序。即使是数字也会先转换在比较排序。</li>
+<li>操作方法：</li>
+</ol>
+<ul>
+<li>concat()方法首先会创建一个当前数组的副本，然后再把它的参数添加到副本末尾，最后返回这个新构建的数组。</li>
+<li>slice()方法复制数组中的一部分，左闭右开。</li>
+<li>splice() 最强大的数组方法，在数组中间插入元素</li>
+</ul>
+<ol start="17">
+<li><p>js提供的3个严格相等的搜索方法：indexOf()、lastIndexOf()和includes()。</p>
+<ul>
+<li><p>这些方法都接收两个参数：要查找的元素和一个可选的起始搜索位置。</p>
+</li>
+<li><p>indexOf()和lastIndexOf()都返回要查找的元素在数组中的位置，如果没找到则返回-1。</p>
+</li>
+<li><p>includes()返回布尔值，表示是否至少找到一个与指定元素匹配的项。</p>
+</li>
+<li><p>在比较第一个参数跟数组每一项时，会使用全等（&#x3D;&#x3D;&#x3D;）比较，两项必须严格相等</p>
+</li>
+</ul>
+</li>
+<li><p>js允许按照定义的断言函数搜索数组，断言函数接收3个参数：元素、索引和数组本身，find()方法和findIndex()使用了断言函数，find()返回第一个匹配的元素，findIndex()返回第一个匹配元素的索引。找到匹配项后不再继续搜索。</p>
+</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> people = [</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">name</span>: <span class="string">&quot;Matt&quot;</span>,</span><br><span class="line">      <span class="attr">age</span>: <span class="number">27</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">name</span>: <span class="string">&quot;Nicholas&quot;</span>,</span><br><span class="line">      <span class="attr">age</span>: <span class="number">29</span></span><br><span class="line">    &#125;</span><br><span class="line">  ];</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(people.<span class="title function_">find</span>(<span class="function">(<span class="params">element, index, array</span>) =&gt;</span> element.<span class="property">age</span> &lt; <span class="number">28</span>));</span><br><span class="line">  <span class="comment">// &#123;name: &quot;Matt&quot;, age: 27&#125;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(people.<span class="title function_">findIndex</span>(<span class="function">(<span class="params">element, index, array</span>) =&gt;</span> element.<span class="property">age</span> &lt; <span class="number">28</span>));</span><br><span class="line">  <span class="comment">// 0</span></span><br></pre></td></tr></table></figure>
 
 <ol start="19">
-<li>random()方法，返回一个0~1范围内的随机数，其中包含0但不包含1。</li>
+<li><p>js为数组定义了5个迭代方法。（不改变原数组）</p>
+<ul>
+<li>every()：此方法用来检测数组中的元素是否全部满足条件。</li>
+<li>filter()：此方法用来筛选数组中的元素。</li>
+<li>forEach()：遍历数组。</li>
+<li>map()：此方法用来处理数组中的每一个元素。</li>
+<li>some()：用来查找数组中是否含有满足条件的值，有的话返回true。</li>
+</ul>
+</li>
+<li><p>js归并方法，reduce()迭代数组。使用reduce()方法可以执行累加数组中所有数值的操作。</p>
+</li>
+<li><p><del>定型数组……看不懂，以后再补充。</del></p>
+</li>
+<li><p><del>canvas部分也先搁置吧</del></p>
+</li>
+<li><p>Map是一种新的集合类型，为这门语言带来了真正的键&#x2F;值存储机制！</p>
+</li>
+<li><p>Object的键值对个数只能手动计算，Map的键值对个数可以轻易地通过size属性获取。</p>
+</li>
+<li><p>函数其实是Function类型的实例，这意味着函数也是对象。</p>
+</li>
+<li><p>在以读模式访问原始值时，后台会实例化一个原始值包装对象，通过这个对象可以操作数据。涉及原始值的语句只要一执行完毕，包装对象就会立即销毁。</p>
+</li>
+<li><p>JS 有两个在一开始执行代码时就存在的内置对象：Global 和 Math。其中，Global对象在大多数ECMAscript实现中无法直接访问，不过浏览器将Global实现为window对象。所有全局变量和函数都是Global对象的属性。Math对象包含辅助完成复杂数学计算的属性和方法。</p>
+</li>
 </ol>
+<p>​	</p>
 
       </section>
 
@@ -177,28 +238,14 @@
       
         <nav class="article-nav">
           
-            <div class="article-nav-item layout-padding">
-  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
-    
-    <div class="card-text">
-      
-        <a href="/2023/03/28/script/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">Script标签的defer属性和async属性</h2>
-        </a>
-      
-      <div class="card-text--row">Newer</div>
-    </div>
-  </article>
-</div>
-          
           
             <div class="article-nav-item layout-padding">
   <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
     
     <div class="card-text">
       
-        <a href="/2023/03/23/%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">第三章 语言基础</h2>
+        <a href="/2023/04/01/Map_&_Set/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">Map &amp; Set</h2>
         </a>
       
       <div class="card-text--row">Older</div>
