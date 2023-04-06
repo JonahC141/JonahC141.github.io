@@ -104,7 +104,7 @@
           <h2 class="title-sub-wrap">
             <strong>JonahC</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2023-03-23T07:52:49.880Z" itemprop="datePublished">2023-03-23</time>
+            <time  class="article-date" datetime="2023-04-06T09:47:19.865Z" itemprop="datePublished">2023-04-06</time>
           </h2>
           <ul class="wrap-list dark">
   
@@ -219,11 +219,11 @@
 <li><p>任何涉及NaN的操作始终返回NaN。用isNaN()函数判断NaN</p>
 </li>
 <li><p>NaN不等于NaN</p>
-</li>
-</ol>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">NaN</span> == <span class="title class_">NaN</span>); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
-
-<ol start="40">
+</li>
+<li><p>要确定NaN的相等性，必须使用极为讨厌的<code>isNaN()</code>。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="built_in">isNaN</span>(<span class="title class_">NaN</span>));   <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+</li>
 <li><p>把一个值传给isNaN()后，该函数会尝试把它转换为数值。某些非数值的值可以直接转换成数值，如字符串”10”或布尔值。布尔值true可以转换为数值1，因此返回false。</p>
 </li>
 <li><p>数值转换函数Number()、parseInt()、parseFloat()，Number()函数转换规则</p>
@@ -248,7 +248,7 @@
 </li>
 <li><p>for-in循环要迭代的变量是null或者undefined，则不执行循环体</p>
 </li>
-<li><p>for-in用于枚举对象中的非符号键属性，for-of循环用于遍历可迭代对象的元素</p>
+<li><p><strong>for-in用于枚举对象中的非符号键属性，for-of循环用于遍历可迭代对象的元素</strong></p>
 </li>
 <li><p>标签语句，用于给标签起名字，典型使用场景是嵌套循环</p>
 </li>
@@ -279,28 +279,14 @@
       
         <nav class="article-nav">
           
-            <div class="article-nav-item layout-padding">
-  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
-    
-    <div class="card-text">
-      
-        <a href="/2023/03/28/%E5%9F%BA%E6%9C%AC%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">第五章 基本引用类型</h2>
-        </a>
-      
-      <div class="card-text--row">Newer</div>
-    </div>
-  </article>
-</div>
-          
           
             <div class="article-nav-item layout-padding">
   <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
     
     <div class="card-text">
       
-        <a href="/2023/03/23/git%E6%8C%87%E4%BB%A4/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">Git常用指令</h2>
+        <a href="/2023/04/06/%E8%BF%AD%E4%BB%A3%E5%99%A8%E5%92%8C%E7%94%9F%E6%88%90%E5%99%A8/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">第七章 迭代器与生成器</h2>
         </a>
       
       <div class="card-text--row">Older</div>
