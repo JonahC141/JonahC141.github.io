@@ -24,7 +24,7 @@
 
   
 
-  <title>path系统路径模块 | JonahC</title>
+  <title>第七章 迭代器与生成器 | JonahC</title>
 
   
 
@@ -100,20 +100,20 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">path系统路径模块</h1>
+          <h1 class="title-wrap">第七章 迭代器与生成器</h1>
           <h2 class="title-sub-wrap">
             <strong>JonahC</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2023-01-06T03:41:35.214Z" itemprop="datePublished">2023-01-06</time>
+            <time  class="article-date" datetime="2023-04-06T08:02:00.616Z" itemprop="datePublished">2023-04-06</time>
           </h2>
           <ul class="wrap-list dark">
   
-    <li><a href="/categories/node%E5%9F%BA%E7%A1%80/">📒 node基础</a></li>
+    <li><a href="/categories/%E7%BA%A2%E5%AE%9D%E4%B9%A6/">📒 红宝书</a></li>
   
 </ul>
           <ul class="wrap-list dark">
   
-    <li><a href="/tags/path/">🏷️ path</a></li>
+    <li><a href="/tags/JavaScript/">🏷️ JavaScript</a></li>
   
 </ul>
         </div>
@@ -137,27 +137,84 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h1 id="path系统路径模块"><a href="#path系统路径模块" class="headerlink" title="path系统路径模块"></a>path系统路径模块</h1><p>最常用的相对路径为.&#x2F;即可。</p>
-<h2 id="resolve"><a href="#resolve" class="headerlink" title="resolve()"></a>resolve()</h2><p>resolve方法用于获取一个路径的绝对路径</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(</span><br><span class="line">    path.<span class="title function_">resolve</span>(<span class="string">&#x27;./&#x27;</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-
-<p>resolve方法可以拼接绝对路径，</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(</span><br><span class="line">	path.<span class="title function_">resolve</span>(<span class="string">&#x27;./&#x27;</span>,<span class="string">&#x27;test&#x27;</span>,<span class="string">&#x27;1.js&#x27;</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-
-<h2 id="join"><a href="#join" class="headerlink" title="join()"></a>join()</h2><p>Join方法用于连接路径，返回连接的结果</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(</span><br><span class="line">	path.<span class="title function_">join</span>(<span class="string">&#x27;demo&#x27;</span>,<span class="string">&#x27;text&#x27;</span>,<span class="string">&#x27;1.js&#x27;</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-
-<h2 id="parse"><a href="#parse" class="headerlink" title="parse()"></a>parse()</h2><p>parse方法用于解析一个文件路径或者一个文件名称</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(</span><br><span class="line">    path.<span class="title function_">parse</span>(<span class="string">&#x27;./test/index.html&#x27;</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-
-<p>返回一个对象，</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">root</span>: <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">  <span class="attr">dir</span>: <span class="string">&#x27;./test&#x27;</span>,</span><br><span class="line">  <span class="attr">base</span>: <span class="string">&#x27;index.html&#x27;</span>,</span><br><span class="line">  <span class="attr">ext</span>: <span class="string">&#x27;.html&#x27;</span>,</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;index&#x27;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>root</strong>——根盘符</p>
-<p><strong>dir</strong>——当前文件夹</p>
-<p><strong>base</strong>——当前文件</p>
-<p><strong>ext</strong>——当前文件的后缀名</p>
-<p><strong>name</strong>——当前文件的名字</p>
+        <h1 id="第7章-迭代器与生成器"><a href="#第7章-迭代器与生成器" class="headerlink" title="第7章 迭代器与生成器"></a>第7章 迭代器与生成器</h1><ol>
+<li>起初，执行迭代必须是会用循环或其他辅助结构，随着代码量增加，代码会变得越发混乱，为了消除复杂性并且减少循环中的错误，于是迭代器诞生了！</li>
+<li>接收可迭代对象的原生语言特性包括：<ul>
+<li>for-of 循环</li>
+<li>数组解构</li>
+<li>扩展操作符</li>
+<li>Array.from（）</li>
+<li>创建集合</li>
+<li>创建映射</li>
+<li>Promise.all()接收由期约组成的可迭代对象</li>
+<li>Promise.race()接收由期约组成的可迭代对象</li>
+<li>yield＊操作符，在生成器中使用</li>
+</ul>
+</li>
+</ol>
+<hr>
+<ol>
+<li><p>yield只能出现在生成器当中</p>
+</li>
+<li><p>迭代器是用来迭代的函数。</p>
+</li>
+<li><p>生成器是用来生成迭代器的。生成器返回的是一个迭代器对象。</p>
+</li>
+<li><p>在函数名前加 “*”号，即可定义一个生成器</p>
+</li>
+<li><p>生成器函数需要next()函数来激活</p>
+</li>
+<li><p>生成器函数最后如果不给定返回值的话，默认返回 undefined</p>
+</li>
+<li><p>可迭代对象：</p>
+<ul>
+<li>数组array</li>
+<li>Set</li>
+<li>Map</li>
+<li>string</li>
+</ul>
+</li>
+<li><p><strong>生成器</strong> 带“*”号的函数 	是一种返回迭代器的函数	  </p>
+</li>
+<li><p><strong>生成器</strong>中会有一个关键字：“<strong>yield</strong>”	用作返回值	同时也用于暂停和返回生成器函数	</p>
+</li>
+<li><p>生成器返回一个迭代器 	所有的迭代器函数都有一个<code>next()</code>方法	每次调用<code>next()</code>方法都返回一个结果对象	</p>
+</li>
+<li><p>结果对象有两个属性<code>&#123;value:item,done:boolean&#125;</code>	没有可返回数据的时候，<code>done:true</code>	</p>
+</li>
+<li><p>如何判断一个对象是否为可迭代对象？</p>
+<ul>
+<li><strong>可迭代对象</strong>有一个<code>Symbol.iterator</code>键，<code>Symbol.iterator</code>是一个函数，判断对象是否为可迭代对象时，可以看看它的原型上是否有该键（函数），对于可迭代对象我们可以使用<code>for-of</code>进行遍历。</li>
+</ul>
+</li>
+<li><p><code>Symbol.iterator</code>指代一个生成器函数</p>
+<hr>
+</li>
+<li><p>创建可迭代对象</p>
+<ul>
+<li>一个普通对象不是一个可迭代的对象，但是给普通对象创建<code>Symbol.iterator</code>属性，且这个属性为一个生成器，那么普通对象就可以变为可迭代对象</li>
+</ul>
+<hr>
+</li>
+<li><p>return()和throw()方法都可以用于强制生成器进入关闭状态。</p>
+</li>
+<li></li>
+</ol>
+<hr>
+<h3 id="关于迭代器和生成器"><a href="#关于迭代器和生成器" class="headerlink" title="关于迭代器和生成器"></a>关于迭代器和生成器</h3><p>连贯地讲明白迭代器和生成器以及可迭代对象的问题：</p>
+<ul>
+<li><p><strong>生成器</strong>是用来创建<strong>迭代器</strong>的函数，通过<code>function*</code>的方式创建一个<strong>生成器函数</strong>，调用<strong>生成器函数</strong>返回一个<strong>生成器</strong>对象，这个<strong>生成器对象</strong>本质是一个<strong>迭代器</strong>，继续调用<strong>迭代器</strong>的<code>next()</code>方法，会使<strong>生成器函数的函数体</strong>从当前位置开始执行，直到遇到第一个<code>yield</code>语句，<code>yield</code>的值会成为调用迭代器方法的<code>next()</code>方法的返回值。</p>
+</li>
+<li><p>在<strong>可迭代对象</strong>当中，都有一个<code>Symbol.iterator</code>属性，该属性为每一个对象定义默认的<strong>迭代器</strong>，该<strong>迭代器</strong>可以被<code>for-of</code>循环使用。</p>
+</li>
+<li><p><strong>-可迭代对象</strong>可以通过<code>for-of</code>循环调用,其原理就是<code>for-of</code>循环会找到迭代器方法，自动生成迭代对象并调用其next()方法。</p>
+</li>
+<li><p>通过使用<strong>迭代器</strong>可以按顺序访问对象中的元素内容，而又不需要关心对象的内部结构。</p>
+</li>
+<li><p><strong>可迭代对象</strong>和<strong>迭代器</strong>都是惰性的，只有当真实用到写一个值时，才回去对其进行计算。</p>
+</li>
+</ul>
+<p>这一段一开始理解比较模糊，虽然语言比较混乱但还是都写下来了。</p>
 
       </section>
 
@@ -165,28 +222,14 @@
       
         <nav class="article-nav">
           
-            <div class="article-nav-item layout-padding">
-  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
-    
-    <div class="card-text">
-      
-        <a href="/2023/01/06/url%E7%BD%91%E7%BB%9C%E8%B7%AF%E5%BE%84%E8%A7%A3%E6%9E%90%E6%A8%A1%E5%9D%97/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">url网络路径解析模块</h2>
-        </a>
-      
-      <div class="card-text--row">Newer</div>
-    </div>
-  </article>
-</div>
-          
           
             <div class="article-nav-item layout-padding">
   <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
     
     <div class="card-text">
       
-        <a href="/2022/12/26/http%E7%8A%B6%E6%80%81%E7%A0%81/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">http状态码</h2>
+        <a href="/2023/04/04/%E9%9B%86%E5%90%88%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">第六章 集合引用类型</h2>
         </a>
       
       <div class="card-text--row">Older</div>
