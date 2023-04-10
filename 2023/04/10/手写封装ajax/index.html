@@ -24,7 +24,7 @@
 
   
 
-  <title>url网络路径解析模块 | JonahC</title>
+  <title>手写封装Ajax | JonahC</title>
 
   
 
@@ -100,20 +100,20 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">url网络路径解析模块</h1>
+          <h1 class="title-wrap">手写封装Ajax</h1>
           <h2 class="title-sub-wrap">
             <strong>JonahC</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2023-01-06T03:54:57.582Z" itemprop="datePublished">2023-01-06</time>
+            <time  class="article-date" datetime="2023-04-10T07:19:05.892Z" itemprop="datePublished">2023-04-10</time>
           </h2>
           <ul class="wrap-list dark">
   
-    <li><a href="/categories/node%E5%9F%BA%E7%A1%80/">📒 node基础</a></li>
+    <li><a href="/categories/Request-Response/">📒 Request&amp;Response</a></li>
   
 </ul>
           <ul class="wrap-list dark">
   
-    <li><a href="/tags/url/">🏷️ url</a></li>
+    <li><a href="/tags/JavaScript/">🏷️ JavaScript</a></li>
   
 </ul>
         </div>
@@ -137,29 +137,9 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h1 id="url网络路径解析模块"><a href="#url网络路径解析模块" class="headerlink" title="url网络路径解析模块"></a>url网络路径解析模块</h1><p>一个url通常	包含以下部分</p>
-<ol>
-<li>协议类型：http 、 https</li>
-<li>域名： <a target="_blank" rel="noopener" href="http://www.baidu.com/">www.baidu.com</a></li>
-<li>接口： &#x2F;w</li>
-<li>query查询语句： wd&#x3D;123&amp;test&#x3D;abc</li>
-</ol>
-<h2 id="parse"><a href="#parse" class="headerlink" title="parse()"></a>parse()</h2><p>parse</p>
-<p>方法用于解析网络路径</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> url = <span class="built_in">require</span>(<span class="string">&#x27;url&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(</span><br><span class="line">    url.<span class="title function_">parse</span>(<span class="string">&#x27;http://www.baidu.com:80/s?wd=123&amp;test=abc#360&#x27;</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+        <h1 id="手写Ajax封装"><a href="#手写Ajax封装" class="headerlink" title="手写Ajax封装"></a>手写Ajax封装</h1><p>AJAX 最吸引人的就是它的“异步”特性，也就是说它可以在不重新刷新页面的情况下与服务器通信，交换数据，或更新页面。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">myAjax</span>(<span class="params">method, url, data</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">const</span> xml = <span class="keyword">new</span> <span class="title class_">XMLHttpRequest</span>();</span><br><span class="line">        xml.<span class="title function_">open</span>(method, url, <span class="literal">true</span>)</span><br><span class="line">        xml.<span class="title function_">send</span>(data)</span><br><span class="line">        xml.<span class="property">onreadystatechange</span> = <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (xml.<span class="property">readyState</span> == <span class="number">4</span> &amp;&amp; xml.<span class="property">status</span> == <span class="number">200</span>) &#123;</span><br><span class="line">                <span class="title function_">resolve</span>(xml.<span class="property">response</span>)</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="title function_">reject</span>(<span class="string">&#x27;请求失败&#x27;</span>)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>返回结果为一个对象</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">protocol</span>: <span class="string">&#x27;http:&#x27;</span>,</span><br><span class="line">  <span class="attr">slashes</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">auth</span>: <span class="literal">null</span>,</span><br><span class="line">  <span class="attr">host</span>: <span class="string">&#x27;www.baidu.com:80&#x27;</span>,</span><br><span class="line">  <span class="attr">port</span>: <span class="string">&#x27;80&#x27;</span>,</span><br><span class="line">  <span class="attr">hostname</span>: <span class="string">&#x27;www.baidu.com&#x27;</span>,</span><br><span class="line">  <span class="attr">hash</span>: <span class="string">&#x27;#360&#x27;</span>,</span><br><span class="line">  <span class="attr">search</span>: <span class="string">&#x27;?wd=123&amp;test=abc&#x27;</span>,</span><br><span class="line">  <span class="attr">query</span>: <span class="string">&#x27;wd=123&amp;test=abc&#x27;</span>,</span><br><span class="line">  <span class="attr">pathname</span>: <span class="string">&#x27;/s&#x27;</span>,</span><br><span class="line">  <span class="attr">path</span>: <span class="string">&#x27;/s?wd=123&amp;test=abc&#x27;</span>,</span><br><span class="line">  <span class="attr">href</span>: <span class="string">&#x27;http://www.baidu.com:80/s?wd=123&amp;test=abc#360&#x27;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>其中protocol是协议类型，通常有http或者https。</p>
-<p>host是完整的域名。port是端口。</p>
-<p>hostname是域名的名称。</p>
-<p>hash是网络地址中带#号的部分，</p>
-<p>search是网络地址中？和它后边的查询语句。</p>
-<p>query是没有问好的查询语句。</p>
-<p>pathanme是接口。</p>
-<p>path是接口+search，</p>
-<p>href是完整的网络地址。</p>
 
       </section>
 
@@ -167,28 +147,14 @@
       
         <nav class="article-nav">
           
-            <div class="article-nav-item layout-padding">
-  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
-    
-    <div class="card-text">
-      
-        <a href="/2023/01/09/http%E6%A8%A1%E5%9D%97/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">http模块</h2>
-        </a>
-      
-      <div class="card-text--row">Newer</div>
-    </div>
-  </article>
-</div>
-          
           
             <div class="article-nav-item layout-padding">
   <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
     
     <div class="card-text">
       
-        <a href="/2023/01/06/path%E6%A8%A1%E5%9D%97/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">path系统路径模块</h2>
+        <a href="/2023/04/10/%E4%BA%8B%E4%BB%B6%E5%86%92%E6%B3%A1&%E4%BA%8B%E4%BB%B6%E6%8D%95%E6%8D%89&%E4%BA%8B%E4%BB%B6%E4%BB%A3%E7%90%86/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">事件冒泡、事件冒泡和事件代理</h2>
         </a>
       
       <div class="card-text--row">Older</div>
