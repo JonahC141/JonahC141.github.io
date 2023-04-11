@@ -24,7 +24,7 @@
 
   
 
-  <title>第七章 迭代器与生成器 | JonahC</title>
+  <title>防抖&amp;节流 | JonahC</title>
 
   
 
@@ -100,15 +100,15 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">第七章 迭代器与生成器</h1>
+          <h1 class="title-wrap">防抖&amp;节流</h1>
           <h2 class="title-sub-wrap">
             <strong>JonahC</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2023-04-06T08:02:00.616Z" itemprop="datePublished">2023-04-06</time>
+            <time  class="article-date" datetime="2023-04-11T13:27:09.684Z" itemprop="datePublished">2023-04-11</time>
           </h2>
           <ul class="wrap-list dark">
   
-    <li><a href="/categories/%E7%BA%A2%E5%AE%9D%E4%B9%A6/">📒 红宝书</a></li>
+    <li><a href="/categories/HTML/">📒 HTML</a></li>
   
 </ul>
           <ul class="wrap-list dark">
@@ -137,83 +137,53 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h1 id="第7章-迭代器与生成器"><a href="#第7章-迭代器与生成器" class="headerlink" title="第7章 迭代器与生成器"></a>第7章 迭代器与生成器</h1><ol>
-<li>起初，执行迭代必须是会用循环或其他辅助结构，随着代码量增加，代码会变得越发混乱，为了消除复杂性并且减少循环中的错误，于是迭代器诞生了！</li>
-<li>接收可迭代对象的原生语言特性包括：<ul>
-<li><code>for-of</code> 循环</li>
-<li>数组解构</li>
-<li>扩展操作符</li>
-<li><code>Array.from（）</code></li>
-<li>创建集合</li>
-<li>创建映射</li>
-<li><code>Promise.all()</code>接收由期约组成的可迭代对象</li>
-<li><code>Promise.race()</code>接收由期约组成的可迭代对象</li>
-<li><code>yield＊</code>操作符，在生成器中使用</li>
+        <h1 id="防抖-amp-节流"><a href="#防抖-amp-节流" class="headerlink" title="防抖 &amp; 节流"></a>防抖 &amp; 节流</h1><p><strong>防抖</strong>和<strong>节流</strong>本质上优化高频率执行代码的一中手段</p>
+<p>比如<code>mousemove</code>事件，在触发时，定在时间上的回调函数浪费资源，浪费性能。</p>
+<p>所以用<strong>防抖</strong>和<strong>节流</strong>来减少调用频率</p>
+<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><ul>
+<li>节流：n秒内只运行一次，若在n秒内重复触发，只有一次生效。</li>
+<li>防抖：n秒内再执行改时间，若在n秒内被触发，则重新计时。</li>
 </ul>
-</li>
-</ol>
+<p>防抖和节流的实现都离不开<code>setTimeout()</code></p>
+<p><code>setTimeout()</code>赋值之后，变量值为1</p>
+<p>即使在调用<code>clearTimeout()</code>清除延时器之后，变量值依旧为1</p>
+<p>是因为，不管是setTimeout还是setInterval，都会有一个返回值。这个返回值是一个数字，代表当前是在浏览器中设置的第几个定时器(返回的是定时器序号)。</p>
+<h2 id="防抖"><a href="#防抖" class="headerlink" title="防抖"></a>防抖</h2><p>多次触发某一事件，只关注最后一次或者第一次的结果的场景</p>
 <hr>
-<ol>
-<li><p><code>yield</code>只能出现在生成器当中</p>
-</li>
-<li><p>迭代器是用来迭代的函数。</p>
-</li>
-<li><p>生成器是用来生成迭代器的。生成器返回的是一个迭代器对象。</p>
-</li>
-<li><p>在函数名前加 “*”号，即可定义一个生成器</p>
-</li>
-<li><p>生成器函数需要<code>next()</code>函数来激活</p>
-</li>
-<li><p>生成器函数最后如果不给定返回值的话，默认返回 undefined</p>
-</li>
-<li><p>可迭代对象：</p>
+<p><strong>防抖立即执行版本</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">debounce</span>(<span class="params">func, wait</span>) &#123;</span><br><span class="line">            <span class="keyword">let</span> timeout = <span class="literal">null</span>;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">                <span class="keyword">if</span> (timeout)&#123;</span><br><span class="line">                    <span class="built_in">clearTimeout</span>(timeout);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">let</span> callNow = !timeout;</span><br><span class="line">                timeout = <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">                    timeout = <span class="literal">null</span>;</span><br><span class="line">                &#125;, wait)</span><br><span class="line">                <span class="keyword">if</span> (callNow) &#123;</span><br><span class="line">                    <span class="title function_">func</span>()</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">change</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">1</span>)</span><br><span class="line">&#125;</span><br><span class="line">    div.<span class="title function_">addEventListener</span>(<span class="string">&quot;click&quot;</span>,<span class="title function_">debounce</span>(change,<span class="number">1000</span>))</span><br></pre></td></tr></table></figure>
+
+<p>简单的讲，就是在函数内创建一个闭包，闭包里设置一个延时器，延时器定时将自己清除，如果成功清除了，下一次就可以成功进入要执行的函数，如果没有成功清除，那么再一次访问的时候，跳过要执行的函数，并且重新设置延时器。</p>
+<p><strong>防抖延迟执行版本</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">debounce</span>(<span class="params">func, wait</span>) &#123;</span><br><span class="line">            <span class="keyword">var</span> timeout = <span class="literal">null</span>;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">                <span class="keyword">if</span> (timeout)&#123;</span><br><span class="line">                    <span class="built_in">clearTimeout</span>(timeout);</span><br><span class="line">                &#125;</span><br><span class="line">                timeout = <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">                    <span class="title function_">func</span>()</span><br><span class="line">                &#125;, wait);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">change</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">1</span>)</span><br><span class="line">&#125;</span><br><span class="line">div.<span class="title function_">addEventListener</span>(<span class="string">&quot;click&quot;</span>,<span class="title function_">debounce</span>(change,<span class="number">1000</span>))</span><br></pre></td></tr></table></figure>
+
+<p>延迟执行版本只需要在立即执行版本上稍作修改即可。</p>
+<h2 id="节流"><a href="#节流" class="headerlink" title="节流"></a>节流</h2><p><strong>节流时间戳版本</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">throttle</span>(<span class="params">func, wait</span>) &#123;</span><br><span class="line">           <span class="keyword">let</span> start = <span class="number">0</span>;</span><br><span class="line">           <span class="keyword">return</span> <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">               <span class="keyword">let</span> now = <span class="title class_">Date</span>.<span class="title function_">now</span>()</span><br><span class="line">               <span class="keyword">if</span> (now - start &gt; wait) &#123;</span><br><span class="line">                   <span class="title function_">func</span>()</span><br><span class="line">                   start = now;</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">div.<span class="title function_">addEventListener</span>(<span class="string">&quot;click&quot;</span>, <span class="title function_">throttle</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">          <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">1</span>);</span><br><span class="line">       &#125;, <span class="number">2000</span>))</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>节流延时器版本</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">throttle</span>(<span class="params">func, wait</span>) &#123;</span><br><span class="line">         <span class="keyword">let</span> timeout = <span class="literal">null</span>;</span><br><span class="line">         <span class="keyword">return</span> <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">              <span class="keyword">if</span> (!timeout) &#123;</span><br><span class="line">                  timeout = <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">                      <span class="title function_">func</span>()</span><br><span class="line">                      timeout = <span class="literal">null</span>;</span><br><span class="line">                  &#125;, wait);</span><br><span class="line">              &#125;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+
+<p>这样写会让函数的执行有一定的延迟，想要无延迟的话，可以把<code>func()</code>放在延时器的外面：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">throttle</span>(<span class="params">func, wait</span>) &#123;</span><br><span class="line">         <span class="keyword">let</span> timeout = <span class="literal">null</span>;</span><br><span class="line">         <span class="keyword">return</span> <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">              <span class="keyword">if</span> (!timeout) &#123;</span><br><span class="line">                  <span class="title function_">func</span>()</span><br><span class="line">                  timeout = <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">                      timeout = <span class="literal">null</span>;</span><br><span class="line">                  &#125;, wait);</span><br><span class="line">              &#125;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><p>防抖在连续的事件，只需触发一次回调的场景有：</p>
 <ul>
-<li>数组array</li>
-<li>Set</li>
-<li>Map</li>
-<li>string</li>
+<li><strong>搜索框搜索输入。</strong> 只需用户最后一次输入完，再发送请求</li>
+<li><strong>手机号、邮箱验证输入检测</strong></li>
+<li><strong>窗口大小<code>resize</code>。</strong>只需窗口调整完后，计算窗口大小。防止重复渲染。</li>
 </ul>
-</li>
-<li><p><strong>生成器</strong> 带“*”号的函数 	是一种返回迭代器的函数	  </p>
-</li>
-<li><p><strong>生成器</strong>中会有一个关键字：“<strong>yield</strong>”	用作返回值	同时也用于暂停和返回生成器函数	</p>
-</li>
-<li><p>生成器返回一个迭代器 	所有的迭代器函数都有一个<code>next()</code>方法	每次调用<code>next()</code>方法都返回一个结果对象	</p>
-</li>
-<li><p>结果对象有两个属性<code>&#123;value:item,done:boolean&#125;</code>	没有可返回数据的时候，<code>done:true</code>	</p>
-</li>
-<li><p>如何判断一个对象是否为可迭代对象？</p>
+<p>节流在间隔一段时间执行一次回调的场景有：</p>
 <ul>
-<li><strong>可迭代对象</strong>有一个<code>Symbol.iterator</code>键，<code>Symbol.iterator</code>是一个函数，判断对象是否为可迭代对象时，可以看看它的原型上是否有该键（函数），对于可迭代对象我们可以使用<code>for-of</code>进行遍历。</li>
+<li><strong>滚动加载。加载更多或滚到底部监听。</strong></li>
+<li><strong>搜索框，搜索联想功能</strong></li>
 </ul>
-</li>
-<li><p><code>Symbol.iterator</code>指代一个生成器函数</p>
-<hr>
-</li>
-<li><p>创建可迭代对象</p>
-<ul>
-<li>一个普通对象不是一个可迭代的对象，但是给普通对象创建<code>Symbol.iterator</code>属性，且这个属性为一个生成器，那么普通对象就可以变为可迭代对象</li>
-</ul>
-<hr>
-</li>
-<li><p><code>return()</code>和<code>throw()</code>方法都可以用于强制生成器进入关闭状态。</p>
-</li>
-</ol>
-<hr>
-<h3 id="关于迭代器和生成器"><a href="#关于迭代器和生成器" class="headerlink" title="关于迭代器和生成器"></a>关于迭代器和生成器</h3><p>连贯地讲明白迭代器和生成器以及可迭代对象的问题：</p>
-<ul>
-<li><p><strong>生成器</strong>是用来创建<strong>迭代器</strong>的函数，通过<code>function*</code>的方式创建一个<strong>生成器函数</strong>，调用<strong>生成器函数</strong>返回一个<strong>生成器</strong>对象，这个<strong>生成器对象</strong>本质是一个<strong>迭代器</strong>，继续调用<strong>迭代器</strong>的<code>next()</code>方法，会使<strong>生成器函数的函数体</strong>从当前位置开始执行，直到遇到第一个<code>yield</code>语句，<code>yield</code>的值会成为调用迭代器方法的<code>next()</code>方法的返回值。</p>
-</li>
-<li><p>在<strong>可迭代对象</strong>当中，都有一个<code>Symbol.iterator</code>属性，该属性为每一个对象定义默认的<strong>迭代器</strong>，该<strong>迭代器</strong>可以被<code>for-of</code>循环使用。</p>
-</li>
-<li><p><strong>可迭代对象</strong>可以通过<code>for-of</code>循环调用,其原理就是<code>for-of</code>循环会找到迭代器方法，自动生成迭代对象并调用其next()方法。</p>
-</li>
-<li><p>通过使用<strong>迭代器</strong>可以按顺序访问对象中的元素内容，而又不需要关心对象的内部结构。</p>
-</li>
-<li><p><strong>可迭代对象</strong>和<strong>迭代器</strong>都是惰性的，只有当真实用到写一个值时，才回去对其进行计算。</p>
-</li>
-</ul>
-<p>这一段一开始理解比较模糊，虽然语言比较混乱但还是都写下来了。</p>
 
       </section>
 
@@ -221,28 +191,14 @@
       
         <nav class="article-nav">
           
-            <div class="article-nav-item layout-padding">
-  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
-    
-    <div class="card-text">
-      
-        <a href="/2023/04/06/%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">第三章 语言基础</h2>
-        </a>
-      
-      <div class="card-text--row">Newer</div>
-    </div>
-  </article>
-</div>
-          
           
             <div class="article-nav-item layout-padding">
   <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
     
     <div class="card-text">
       
-        <a href="/2023/04/04/%E9%9B%86%E5%90%88%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">第六章 集合引用类型</h2>
+        <a href="/2023/04/10/%E6%89%8B%E5%86%99%E5%B0%81%E8%A3%85ajax/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">手写封装Ajax</h2>
         </a>
       
       <div class="card-text--row">Older</div>
